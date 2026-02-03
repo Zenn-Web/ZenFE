@@ -37,41 +37,46 @@
 </nav>
 
 
-<section class="bg-black text-white min-vh-100 d-flex align-items-center">
+<section class="bg-white text-black py-5 min-vh-100 d-flex align-items-center">
     <div class="container"> 
-        <div class="row align-items-center"> 
-            <div class="col-lg-6 d-flex justify-content-center mb-4">
-                <div class="profile-wrapper">
-                    <div class="position-absolute rounded-circle bg-success opacity-25"
-                         style="width: 420px; height: 420px; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0;">
+        <div class="row align-items-center justify-content-center"> 
+            
+            <div class="col-lg-6 text-lg-start text-center mb-5 mb-lg-0">
+                <h1 class="display-4 fw-bold">Hello, I am Zenifen</h1>
+                <p class="lead opacity-75 mb-4">Web Developer | Front End Engineer</p>
+                <a href="#" class="btn btn-custom-portfolio btn-lg px-4">Lihat Portofolio</a>
+            </div>
+
+            <div class="col-lg-6 d-flex justify-content-center">
+                <div class="profile-animation-wrapper">
+                    
+                    <div class="animated-gradient-bg"></div>
+                    <div class="pulsing-circle-outer"></div>
+                    <div class="pulsing-circle-inner"></div>
+
+                    <div class="audio-visualizer">
+                        <span class="bar bar-1"></span><span class="bar bar-2"></span><span class="bar bar-3"></span>
+                        <span class="bar bar-4"></span><span class="bar bar-5"></span><span class="bar bar-6"></span>
+                        <span class="bar bar-7"></span><span class="bar bar-8"></span><span class="bar bar-9"></span>
+                        <span class="bar bar-10"></span><span class="bar bar-11"></span><span class="bar bar-12"></span>
+                        <span class="bar bar-13"></span><span class="bar bar-14"></span><span class="bar bar-15"></span>
+                        <span class="bar bar-16"></span><span class="bar bar-17"></span><span class="bar bar-18"></span>
+                        <span class="bar bar-19"></span><span class="bar bar-20"></span>
                     </div>
-                    <img src="{{ asset('img/foto_portofolio.png') }}" alt="Zenifen" class="img-main position-relative">
+
+                    <div class="profile-picture-container">
+                        <img src="{{ asset('img/foto_portofolio.png') }}" class="img-fluid profile-image" alt="Zenifen">
+                    </div>
+
                     <div class="ornamen-box rocket">🚀</div>
                     <div class="ornamen-box glasses">😎</div>
                     <div class="status-badge"><span class="dot"></span> Ready to work</div>
-                </div>
-            </div>
 
-            <div class="col-lg-6 text-lg-start text-center">
-                <h1 class="display-4 fw-bold">Hello, I am Zenifen</h1>
-                <p class="lead opacity-75 mb-4">Web Developer | Front End Engineer</p>
-                <a href="#" class="btn btn-outline-light btn-lg px-4">Lihat Portofolio</a>
-            </div>
-        </div> 
-    </div> 
-</section>
+                </div> </div> </div> </div> </section>
+               
 
-<section class="py-5 bg-white text-dark"> 
-    <div class="container">
-        <h2 class="fw-bold text-center mb-4">Tentang Saya</h2>
-        <p class="text-center"> 
-            Saya adalah seorang pengembang web yang masih mau terus belajar dan mengembangkan kemampuan di bidang pemrograman, khususnya HTML, PHP, Python, dan Laravel. Saya mau belajar membangun website dan aplikasi web yang terstruktur, dinamis, serta responsif dengan memanfaatkan Laravel sebagai framework utama dan HTML untuk menyusun tampilan antarmuka. 
-            Pada sisi backend, saya mau belajar menggunakan PHP untuk mengelola logika aplikasi dan integrasi data, serta Python untuk pengolahan data dan otomatisasi sederhana. Saya memiliki semangat belajar yang tinggi, terbuka terhadap hal baru, dan berkomitmen untuk terus meningkatkan kemampuan agar dapat menghasilkan solusi digital yang lebih baik.
-        </p>
-    </div>
-</section>
 
-<section class="py-5 bg-white text-dark" style="margin-top: -1px;"> 
+<section class="py-5 bg-white text-dark d-flex" style="margin-top: -1px;"> 
     <div class="container-fluid px-lg-5"> <div class="text-center mb-5">
             <h2 class="fw-bold display-6">Keahlian Saya</h2>
             <p class="text-muted">Beberapa teknologi yang sedang saya pelajari untuk membangun website.</p>
@@ -158,7 +163,36 @@
                     </div>
                 </div>
                 
-            </div> 
-        </div> </div> </section>
+            </div> </section>
+
+ <section class="bg-white text-black py-5 max-vh-100 d-flex align-items-center">          
+<div class="container">
 
 
+    <h2 class="fw-bold mb-4">My Resources</h2>
+
+   <div class="container">
+    <div class="col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card resource-card h-100 w-100 border-0 shadow-lg p-4" style="border-radius: 20px; border: 1px solid #000000;">
+        
+   <div class="img-container d-flex align-items-center justify-content-center mb-3" 
+     style="background-color: transparent; border-radius: 15px; height: 200px; overflow: hidden;">
+     
+    <img src="{{ asset('img/eyegil.porto.png') }}"
+         class="img-fluid"
+         style="max-height: 100%; width: auto; object-fit: contain; border: 1px solid #e0e0e0; border-radius: 8px;" 
+         alt="UX Audit Checklist">
+</div>
+        <div class="card-body p-0 text-start"> <span class="badge bg-light text-primary mb-2 px-3 py-2">UX</span>
+            <h5 class="fw-bold mb-2">UX Audit Checklist</h5>
+            <p class="text-muted small mb-0">
+                Checklist untuk mengevaluasi dan meningkatkan pengalaman pengguna.
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+</section>
+
+@endsection

@@ -1,6 +1,25 @@
 // 1. Panggil Bootstrap (Robot ini akan mengambil file dari folder node_modules)
 @import "bootstrap/scss/bootstrap";
 
+.btn-custom-portfolio {
+    background-color: #000000; /* Warna awal hitam */
+    color: #ffffff;            /* Teks awal putih */
+    border: 2px solid #000000; /* Border hitam agar saat hover tetap rapi */
+    border-radius: 12px;       /* Opsional: sesuaikan dengan tema kartu kamu */
+    transition: all 0.3s ease; /* Animasi perpindahan warna halus */
+    font-weight: 500;
+}
+
+.btn-custom-portfolio:hover {
+    background-color: #ffffff; /* Berubah jadi putih saat diarahin kursor */
+    color: #000000;            /* Teks berubah jadi hitam */
+    border: 2px solid #000000; /* Border muncul warna hitam */
+    transform: scale(1.05);    /* Opsional: tombol membesar dikit agar interaktif */
+}
+
+
+
+
 // Container utama foto
 .profile-wrapper {
     position: relative;
@@ -15,11 +34,145 @@
     }
 }
 
+// Variabel warna (opsional, untuk konsistensi)
+$green-light: #a8edc2; // Warna hijau muda
+$green-medium: #80e6a3; // Warna hijau menengah
+$green-dark: #00a884; // Hijau WhatsApp
+$profile-size: 300px; // Ukuran dasar lingkaran foto profil
+$outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
+
+.profile-animation-wrapper {
+    position: relative;
+    width: $outer-circle-size; // Menentukan lebar total area animasi
+    height: $outer-circle-size; // Menentukan tinggi total area animasi
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.animated-gradient-bg {
+    position: absolute;
+    width: $outer-circle-size;
+    height: $outer-circle-size;
+    border-radius: 50%;
+    background: linear-gradient(45deg, $green-light 0%, $green-medium 100%);
+    animation: rotateGradient 10s linear infinite; // Animasi rotasi gradient
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.pulsing-circle-outer,
+.pulsing-circle-inner {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba($green-dark, 0.5);
+    z-index: 2;
+    animation: pulse 2s ease-out infinite; // Animasi denyut
+}
+
+.pulsing-circle-outer {
+    width: $profile-size + 40px;
+    height: $profile-size + 40px;
+    animation-delay: 0s;
+    border-color: rgba($green-dark, 0.7);
+}
+
+.pulsing-circle-inner {
+    width: $profile-size + 20px;
+    height: $profile-size + 20px;
+    animation-delay: 0.5s; // Delay agar tidak bersamaan
+    border-color: rgba($green-dark, 0.4);
+}
+
+.profile-picture-container {
+    position: relative;
+    width: $profile-size;
+    height: $profile-size;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 5px #fff, 0 0 0 7px $green-dark; // Border putih dan hijau
+    z-index: 3;
+    background-color: #f0f8ff; // Warna background jika gambar tidak penuh
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Memastikan gambar mengisi penuh lingkaran
+    object-position: top center; // Fokus pada bagian atas gambar
+    border-radius: 50%; // Pastikan gambar tetap bulat
+}
+
+
+/* --- ANIMASI --- */
+@keyframes rotateGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+/* --- AUDIO VISUALIZER --- */
+.audio-visualizer {
+    position: absolute;
+    width: $outer-circle-size + 50px; // Sedikit lebih besar dari lingkaran luar
+    height: $outer-circle-size + 50px;
+    border-radius: 50%;
+    z-index: 4; // Di atas semua lingkaran
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; // Agar tidak menghalangi interaksi lain
+}
+
+.audio-visualizer .bar {
+    position: absolute;
+    background-color: rgba($green-dark, 0.5);
+    width: 2px;
+    height: 20px; // Tinggi default
+    transform-origin: bottom center; // Rotasi dari tengah bawah
+    animation: visualize 1.2s ease-in-out infinite alternate;
+}
+
+// Untuk menempatkan bar di sekeliling lingkaran
+@for $i from 1 through 20 {
+    .audio-visualizer .bar-#{$i} {
+        // Hitung posisi di lingkaran
+        $angle: (360deg / 20) * ($i - 1);
+        transform: rotate($angle) translateY(-($outer-circle-size / 2 + 25px)); // Jarak dari tengah
+        animation-delay: ($i * 0.05s); // Delay unik untuk setiap bar
+    }
+}
+
+@keyframes visualize {
+    0% { height: 10px; opacity: 0.4; }
+    50% { height: 40px; opacity: 1; }
+    100% { height: 10px; opacity: 0.4; }
+}
+
 // Kotak kaca (Glassmorphism)
 .ornamen-box {
     position: absolute;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.1);
+     background: rgba(31, 44, 51, 0.8); 
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 15px;
@@ -39,34 +192,58 @@
     }
 }
 
+@media (max-width: 768px) {
+    .status-badge {
+        right: -20px; /* Lebih merapat di layar kecil */
+    }
+}
 // Badge status panjang
 .status-badge {
     position: absolute;
-    right: -50px;
+    right: -120px; 
     bottom: 40%;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px 16px;
-    border-radius: 50px;
-    color: white;
+    background: rgba(31, 44, 51, 0.8); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+    color: #e9edef;
+    padding: 8px 14px;
+    border-radius: 0 15px 15px 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
     font-size: 14px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    animation: floating 4s ease-in-out infinite; // Durasi dibedakan (4s) supaya geraknya tidak barengan
-    animation-delay: 0.5s; // Kasih delay dikit biar lebih natural
+    gap: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: floating 4s ease-in-out infinite;
 
+    /* PINDAHKAN .dot KE DALAM SINI */
     .dot {
-       width: 10px;
-        height: 10px;
-        background-color: #28a745;
+        width: 8px;
+        height: 8px;
+        background-color: #00a884; 
         border-radius: 50%;
         display: inline-block;
-        animation: pulse-green 2s infinite;
+        box-shadow: 0 0 8px rgba(0, 168, 132, 0.8);
+        animation: pulse-dot 2s infinite;
+    }
+
+    /* GUNAKAN :: BUKAN TITIK */
+    &::after {
+        content: "22:15";
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-left: 5px;
+        margin-top: 4px;
     }
 }
+
+/* WAJIB ADA AGAR BISA MELAYANG */
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
 
 @keyframes floating {
     0% {
@@ -80,17 +257,90 @@
     }
 }
 
-@keyframes pulse-green {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
-    }
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); // Bayangan membesar lalu menghilang
-    }
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+.status-badge {
+    // ... kode position, background, dll tetap sama ...
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        background-color: #00a884; 
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 8px rgba(0, 168, 132, 0.8);
+        
+        /* TAMBAHKAN INI */
+        animation: pulse-dot 2s infinite; 
     }
 }
+
+/* DEFINISI ANIMASI DENYUT */
+@keyframes pulse-dot {
+    0% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(0, 168, 132, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(0, 168, 132, 0);
+    }
+    100% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(0, 168, 132, 0);
+    }
+}
+.resource-card {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 22px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    
+    /* Animasi Utama */
+    transition: 
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), // Efek sedikit membal (bouncy)
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+
+    /* Animasi saat muncul pertama kali (Fade In) */
+    animation: fadeInUp 0.8s ease backwards;
+
+    &:hover {
+        transform: translateY(-12px); /* Kartu terangkat */
+        border-color: rgba(99, 102, 241, 0.4); /* Warna border berubah biru tipis */
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12); /* Bayangan lebih dalam */
+        
+        .resource-img {
+            transform: scale(1.05); /* Gambar sedikit membesar */
+            filter: brightness(1.05); /* Gambar sedikit lebih terang */
+        }
+    }
+}
+
+.resource-img-wrapper {
+    overflow: hidden; /* Penting agar gambar tidak keluar kotak saat membesar */
+    margin: 16px;
+    border-radius: 16px;
+}
+
+.resource-img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Keyframes untuk animasi muncul pertama kali */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
