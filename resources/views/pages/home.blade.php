@@ -53,25 +53,16 @@
                     <div class="animated-gradient-bg"></div>
                     <div class="pulsing-circle-outer"></div>
                     <div class="pulsing-circle-inner"></div>
-
-                    <div class="audio-visualizer">
-                        <span class="bar bar-1"></span><span class="bar bar-2"></span><span class="bar bar-3"></span>
-                        <span class="bar bar-4"></span><span class="bar bar-5"></span><span class="bar bar-6"></span>
-                        <span class="bar bar-7"></span><span class="bar bar-8"></span><span class="bar bar-9"></span>
-                        <span class="bar bar-10"></span><span class="bar bar-11"></span><span class="bar bar-12"></span>
-                        <span class="bar bar-13"></span><span class="bar bar-14"></span><span class="bar bar-15"></span>
-                        <span class="bar bar-16"></span><span class="bar bar-17"></span><span class="bar bar-18"></span>
-                        <span class="bar bar-19"></span><span class="bar bar-20"></span>
-                    </div>
-
                     <div class="profile-picture-container">
-                        <img src="{{ asset('img/foto_portofolio.png') }}" class="img-fluid profile-image" alt="Zenifen">
+                        <img src="{{ asset('img/foto_portofolio_animate.png') }}" class="img-fluid profile-image" alt="Zenifen">
                     </div>
-
-                    <div class="ornamen-box rocket">🚀</div>
-                    <div class="ornamen-box glasses">😎</div>
-                    <div class="status-badge"><span class="dot"></span> Ready to work</div>
-
+                    <div class="ornamen-box computer">🖥️</div>
+                    <div class="ornamen-box greek">🏛</div>
+                   <div class="status-badge">
+    <span class="dot"></span> 
+    <span class="status-text">Ready to work</span>
+    <span id="live-clock">00:00</span>
+</div>
                 </div> </div> </div> </div> </section>
                
 

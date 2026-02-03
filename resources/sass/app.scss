@@ -130,43 +130,6 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     }
 }
 
-/* --- AUDIO VISUALIZER --- */
-.audio-visualizer {
-    position: absolute;
-    width: $outer-circle-size + 50px; // Sedikit lebih besar dari lingkaran luar
-    height: $outer-circle-size + 50px;
-    border-radius: 50%;
-    z-index: 4; // Di atas semua lingkaran
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none; // Agar tidak menghalangi interaksi lain
-}
-
-.audio-visualizer .bar {
-    position: absolute;
-    background-color: rgba($green-dark, 0.5);
-    width: 2px;
-    height: 20px; // Tinggi default
-    transform-origin: bottom center; // Rotasi dari tengah bawah
-    animation: visualize 1.2s ease-in-out infinite alternate;
-}
-
-// Untuk menempatkan bar di sekeliling lingkaran
-@for $i from 1 through 20 {
-    .audio-visualizer .bar-#{$i} {
-        // Hitung posisi di lingkaran
-        $angle: (360deg / 20) * ($i - 1);
-        transform: rotate($angle) translateY(-($outer-circle-size / 2 + 25px)); // Jarak dari tengah
-        animation-delay: ($i * 0.05s); // Delay unik untuk setiap bar
-    }
-}
-
-@keyframes visualize {
-    0% { height: 10px; opacity: 0.4; }
-    50% { height: 40px; opacity: 1; }
-    100% { height: 10px; opacity: 0.4; }
-}
 
 // Kotak kaca (Glassmorphism)
 .ornamen-box {
@@ -181,14 +144,17 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     animation: floating 3s ease-in-out infinite; // Nama animasi, durasi, tipe gerak, dan diulang terus
 
-    &.rocket {
+    &.computer {
         top: -20px;
         right: -20px;
+        /* Durasi 3 detik, tanpa delay */
+        animation: floating-computer 3s ease-in-out infinite;
     }
-
-    &.glasses {
+  &.greek {
         bottom: 20px;
         left: -40px;
+        /* Durasi lebih lama (5 detik) agar gerakannya beda tempo */
+        animation: floating-greek 5s ease-in-out infinite;
     }
 }
 
@@ -202,20 +168,33 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     position: absolute;
     right: -120px; 
     bottom: 40%;
-    z-index: 10;
-    background: rgba(31, 44, 51, 0.8); 
+    z-index: 100;
+    will-change: transform;
+    background: rgba(31, 44, 51, 0.9); 
     backdrop-filter: blur(8px); 
-    -webkit-backdrop-filter: blur(8px);
     color: #e9edef;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 0 15px 15px 15px; 
     border: 1px solid rgba(255, 255, 255, 0.1); 
     font-size: 14px;
+    
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    animation: floating 4s ease-in-out infinite;
+    white-space: nowrap;
+ animation: floating-badge 4s ease-in-out 1s infinite;
+
+    .status-text {
+        font-weight: 500;
+    }
+
+    #live-clock {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-left: 5px;
+        flex-shrink: 0; // Kunci agar jam tetap di dalam kotak
+    }
 
     /* PINDAHKAN .dot KE DALAM SINI */
     .dot {
@@ -228,14 +207,21 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
         animation: pulse-dot 2s infinite;
     }
 
-    /* GUNAKAN :: BUKAN TITIK */
-    &::after {
-        content: "22:15";
-        font-size: 10px;
-        color: rgba(255, 255, 255, 0.5);
-        margin-left: 5px;
-        margin-top: 4px;
-    }
+   @keyframes floating-computer {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(5px, -10px); } // Ada sedikit gerakan ke samping
+}
+
+/* 3. Animasi untuk Ikon Greek/Kuil (Gerakan Pendek) */
+@keyframes floating-greek {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+}
+
+@keyframes floating-badge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 /* WAJIB ADA AGAR BISA MELAYANG */
@@ -245,17 +231,6 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
 }
 
 
-@keyframes floating {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px); // Naik 15 pixel
-    }
-    100% {
-        transform: translateY(0px);   // Kembali ke posisi awal
-    }
-}
 
 .status-badge {
     // ... kode position, background, dll tetap sama ...
