@@ -19,21 +19,6 @@
 
 
 
-
-// Container utama foto
-.profile-wrapper {
-    position: relative;
-    display: inline-block;
-    z-index: 5;
-
-    .img-main {
-        width: 300px;
-        border-radius: 30px; // Membuat pojok foto melengkung halus
-        z-index: 2;
-        position: relative;
-    }
-}
-
 // Variabel warna (opsional, untuk konsistensi)
 $green-light: #a8edc2; // Warna hijau muda
 $green-medium: #80e6a3; // Warna hijau menengah
@@ -135,7 +120,7 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
 .ornamen-box {
     position: absolute;
     z-index: 10;
-     background: rgba(31, 44, 51, 0.8); 
+     background: rgba(0, 0, 0, 0.8); 
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 15px;
@@ -156,7 +141,25 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
         /* Durasi lebih lama (5 detik) agar gerakannya beda tempo */
         animation: floating-greek 5s ease-in-out infinite;
     }
+
+    /* 3. Animasi untuk Ikon Greek/Kuil (Gerakan Pendek) */
+@keyframes floating-greek {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
+}
+
+@keyframes floating-badge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* WAJIB ADA AGAR BISA MELAYANG */
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
 
 @media (max-width: 768px) {
     .status-badge {
@@ -170,12 +173,11 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     bottom: 40%;
     z-index: 100;
     will-change: transform;
-    background: rgba(31, 44, 51, 0.9); 
+    background: rgba(0, 0, 0, 0.9); 
     backdrop-filter: blur(8px); 
     color: #e9edef;
     padding: 8px 16px;
     border-radius: 0 15px 15px 15px; 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
     font-size: 14px;
     
     display: flex;
@@ -212,23 +214,9 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     50% { transform: translate(5px, -10px); } // Ada sedikit gerakan ke samping
 }
 
-/* 3. Animasi untuk Ikon Greek/Kuil (Gerakan Pendek) */
-@keyframes floating-greek {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
 }
 
-@keyframes floating-badge {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
 
-/* WAJIB ADA AGAR BISA MELAYANG */
-@keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
 
 
 
@@ -291,11 +279,7 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     }
 }
 
-.resource-img-wrapper {
-    overflow: hidden; /* Penting agar gambar tidak keluar kotak saat membesar */
-    margin: 16px;
-    border-radius: 16px;
-}
+
 
 .resource-img {
     width: 100%;
@@ -318,4 +302,71 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     }
 }
 
+/* Font Styling */
+.fw-black { font-weight: 900; }
+.tracking-widest { letter-spacing: 2.0em; }
 
+/* Card Styling */
+.profile-card-horizontal {
+    border-radius: 0; /* Boxy look yang elegan */
+    border: 3px solid #000 !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.fw-black { font-weight: 900; }
+.tracking-widest { letter-spacing: 0.2em; }
+
+/* Card Styling */
+.profile-card-horizontal {
+    border-radius: 0; /* Boxy look yang elegan */
+    border: 3px solid #000 !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-card-horizontal:hover {
+    transform: translateY(-10px);
+    box-shadow: 20px 20px 0px #000 !important; /* Bayangan solid hitam */
+}
+
+/* Image Styling */
+.image-wrapper img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.profile-card-horizontal:hover .image-wrapper img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Social Links */
+.social-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Base Animation State */
+.animate-text, .animate-buttons {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    visibility: hidden; /* Tambahkan ini agar tidak mengganggu klik sebelum muncul */
+}
+
+/* Keadaan akhir: Elemen muncul sempurna */
+.animate-text.reveal, .animate-buttons.reveal {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}

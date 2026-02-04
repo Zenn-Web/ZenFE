@@ -64,6 +64,38 @@
     <span id="live-clock">00:00</span>
 </div>
                 </div> </div> </div> </div> </section>
+
+<section class="about-section py-5 bg-white">
+    <div class="container">
+        <div class="card profile-card-horizontal border-dark shadow-lg overflow-hidden">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-4 profile-img-container bg-white text-center py-5">
+                    <div class="image-wrapper shadow">
+                        <img src="{{ asset('img/foto-kamu.jpg') }}" alt="Profile" class="img-fluid rounded-circle border border-4 border-white">
+                    </div>
+                </div>
+                <div class="col-md-8 bg-white">
+                    <div class="card-body p-4 p-lg-5">
+                        <h6 class="text-uppercase fw-bold text-muted mb-2 tracking-widest animate-text">About Me</h6>
+        
+                        <p class="text-secondary mb-4 animate-text">
+                            Berpengalaman dalam membangun aplikasi web yang responsif dan performa tinggi. Fokus pada struktur kode yang bersih dan pengalaman pengguna yang intuitif.
+                        </p>
+                        
+                        <div class="d-flex flex-wrap gap-3 mt-4 animate-buttons">
+                            
+                            <div class="d-flex align-items-center gap-2">
+                                <a href="#" class="social-link border border-dark rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-link border border-dark rounded-circle"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-link border border-dark rounded-circle"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
                
 
 
@@ -117,44 +149,6 @@
 
         </div> </div> </section>
 
-<section class="bg-white text-black py-5 min-vh-100 d-flex align-items-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            
-            <div class="col-auto d-none d-md-flex flex-column align-items-center" style="width: 50px;">
-                <span class="bg-black rounded-circle mb-2" style="width:12px; height:12px; flex-shrink: 0;"></span>
-                <div class="bg-black opacity-50" style="width:2px; height: 100%; min-height: 400px;"></div>
-            </div>
-
-            <div class="col-md-10 col-lg-8"> 
-                <div class="row mb-5">
-                    <div class="col-md-3">
-                        <p class="text-uppercase small opacity-75 mt-2 fw-bold">Profile</p>
-                    </div>
-                    <div class="col-md-9">
-                         <p class="lh-lg opacity-90">
-                            Saya berasal dari Jakarta dan pernah tinggal di Surabaya, pengalaman yang membantu saya beradaptasi dengan lingkungan dan budaya yang berbeda.
-                            Saya memiliki ketertarikan untuk terus belajar dan berkembang, serta terbiasa menghadapi tantangan baru dengan sikap terbuka dan bertanggung jawab. Pengalaman berpindah
-                            tempat tinggal dan menjalani kehidupan perkuliahan membentuk saya menjadi pribadi yang lebih mandiri, fleksibel, dan siap menghadapi berbagai situasi.
-                         </p> </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <p class="text-uppercase small opacity-75 mt-1 fw-bold">Intro</p>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="pe-md-3">
-                            <p class="lh-lg opacity-90">
-                                Saya saat ini berkuliah di Universitas Islam Indonesia, dengan fokus mengembangkan diri baik secara akademik maupun pribadi. Sebelumnya, saya mempelajari Stoicisme, yang membentuk pola pikir saya dalam kedisiplinan, ketahanan diri, dan refleksi diri. 
-                                Di samping perkuliahan, saya memiliki ketertarikan yang besar terhadap teknologi dan pemrograman,
-                                serta terus mempelajari bagaimana teknologi dapat digunakan untuk menciptakan solusi yang bermakna dan bermanfaat di masa depan.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div> </section>
 
  <section class="bg-white text-black py-5 max-vh-100 d-flex align-items-center">          
 <div class="container">
