@@ -1,0 +1,316 @@
+@import "bootstrap/scss/bootstrap";
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container Utama Kartu */
+/* --- BASE CARD STYLE --- */
+
+
+#resources {
+
+    scroll-margin-top: 80px; /* Jarak aman dari sticky navbar */
+
+}
+
+.card-elegant {
+    position: relative;
+    border-radius: 20px !important;
+    background: #fff;
+    overflow: hidden;
+    cursor: pointer;
+
+    transform: translateY(40px);
+
+    transition:
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.6s ease;
+
+    /* 🔥 SHADOW DEFAULT (SUDAH TERASA NAIK) */
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.06),     // contact shadow
+        0 14px 30px rgba(0, 0, 0, 0.12),   // mid depth
+        0 40px 80px rgba(0, 0, 0, 0.16);   // ambient depth
+
+    will-change: transform, box-shadow;
+
+    /* ✨ HIGHLIGHT EDGE */
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+
+        background: linear-gradient(
+            180deg,
+            rgba(255,255,255,0.85),
+            rgba(255,255,255,0.25) 30%,
+            transparent 65%
+        );
+    }
+}
+
+
+
+
+
+/* --- IMAGE CONTAINER --- */
+.image-container {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #f8f9fa;
+    overflow: hidden; /* Memotong gambar saat membesar (zoom) */
+    position: relative;
+}
+
+/* --- IMAGE STYLE & ANIMATION --- */
+.img-hover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Awalnya Abu-abu */
+    /* Transisi Smooth untuk Zoom dan Warna */
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), 
+                filter 0.6s ease;
+}
+
+
+/* --- HOVER EFFECTS --- */
+
+/* 1. Kartu Terangkat */
+.card-elegant.reveal-visible:hover {
+    transform: translateY(-14px) scale(1.025) !important;
+
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.08),
+        0 25px 50px rgba(0, 0, 0, 0.18),
+        0 50px 90px rgba(0, 0, 0, 0.22);
+
+    z-index: 10;
+}
+
+
+
+/* 2. Gambar Zoom & Berubah Warna (Grayscale -> Color) */
+.card-elegant:hover .img-hover {
+    transform: scale(1.1); /* Zoom In perlahan */
+    filter: grayscale(0%);  /* Kembali ke warna asli */
+}
+
+
+.badge-ux {
+    top: 15px;
+    right: 15px;
+    background: rgb(0, 0, 0); /* Transparan gelap agar lebih elegan di atas gambar */
+    backdrop-filter: blur(5px);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.link-primary:hover {
+    text-decoration: underline !important;
+}
+
+
+
+
+.custom-navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* Efek kaca transparan modern */
+    padding: 18px 0;
+    border-bottom: 1px solid #f1f1f1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+// navbar
+.brand-logo {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #1a1a1a !important;
+    letter-spacing: -0.5px;
+}
+
+.brand-logo .dot {
+    color: #000000; /* Warna aksen biru modern */
+}
+
+/* Menu Links */
+.nav-links-group {
+    gap: 20px;
+}
+
+.custom-navbar .nav-link {
+    color: #555 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 5px 0 !important;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Garis bawah animasi saat hover & active */
+.custom-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover::after,
+.custom-navbar .nav-link.active::after {
+    width: 100%;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: #1a1a1a !important;
+}
+
+/* Tombol Action */
+.btn-contact-me {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-contact-me:hover {
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Section Contact me */
+.custom-toggler {
+    border: none !important;
+}
+
+.custom-toggler:focus {
+    box-shadow: none !important;
+}
+
+.contact-section {
+    padding: 100px 0;
+    background-color: #ffffff; /* Background Putih Bersih */
+    color: #000000;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 100px;
+    padding: 0 20px;
+}
+
+.contact-info {
+    flex: 1;
+
+    .contact-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.5rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .contact-subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+    .contact-details a {
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .contact-socials {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+        
+        .social-icon {
+            color: #000;
+            font-size: 1.3rem;
+            transition: opacity 0.3s;
+            &:hover { opacity: 0.5; }
+        }
+    }
+}
+
+.contact-form-wrapper {
+    flex: 1.5;
+
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            border: none;
+            border-bottom: 2px solid #000; /* Style garis bawah minimalis */
+            padding: 10px 0;
+            outline: none;
+            background: transparent;
+            font-family: inherit;
+            transition: border-color 0.3s;
+
+            &:focus {
+                border-color: #666;
+            }
+        }
+    }
+
+    .button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .btn-send-contact {
+        background: #000;
+        color: #fff;
+        border: 2px solid #000;
+        padding: 12px 50px;
+        font-weight: 600;
+        cursor: pointer;
+        
+        &:hover {
+            background: #fff;
+            color: #000;
+        }
+    }
+}
+
+
+

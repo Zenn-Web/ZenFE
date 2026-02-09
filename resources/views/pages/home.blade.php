@@ -4,48 +4,26 @@
 @section('content')
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-  <div class="container">
-
-    <a class="navbar-brand" href="#">Zenifen</a>
-
-    <!-- TOGGLER (HP) -->
-    <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- MENU -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-      <ul class="navbar-nav gap-3">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<section class="bg-white text-black py-5 min-vh-100 d-flex align-items-center">
+<section class="bg-white text-black reveal-section py-5 min-vh-100 d-flex align-items-center">
     <div class="container"> 
         <div class="row align-items-center justify-content-center"> 
             
-            <div class="col-lg-6 text-lg-start text-center mb-5 mb-lg-0">
-                <h1 class="display-4 fw-bold">Hello, I am Zenifen</h1>
-                <p class="lead opacity-75 mb-4">Web Developer | Front End Engineer</p>
-                <a href="#" class="btn btn-custom-portfolio btn-lg px-4">Lihat Portofolio</a>
-            </div>
+ <div class="col-lg-6 text-lg-start text-center mb-5 mb-lg-0">
+    <h1 class="display-4 fw-bold">Zenifen Caesarof Agusti</h1>
+    <p class="lead opacity-75 mb-0">Web Developer & Front End Engineer</p>
+    <p class="text-muted small mb-4">Crafting high-quality digital solutions with precision and code.</p>
+
+    <div class="row g-3 justify-content-center justify-content-lg-start mt-3">
+    <div class="col-auto">
+        <h5 class="fw-bold mb-0">5+</h5>
+        <small class="text-muted">Tech Explored</small>
+    </div>
+    <div class="col-auto border-start ps-3">
+        <h5 class="fw-bold mb-0">Open</h5>
+        <small class="text-muted">To Collaboration</small>
+    </div>
+</div>
+</div>
 
             <div class="col-lg-6 d-flex justify-content-center">
                 <div class="profile-animation-wrapper">
@@ -60,36 +38,59 @@
                     <div class="ornamen-box greek">🏛</div>
                    <div class="status-badge">
     <span class="dot"></span> 
-    <span class="status-text">Ready to work</span>
+    <span class="status-text">Focused on Growth</span>
     <span id="live-clock">00:00</span>
 </div>
                 </div> </div> </div> </div> </section>
 
-<section class="about-section py-5 bg-white">
+<section id="about" class="about-section reveal-section py-5 bg-white">
     <div class="container">
-        <div class="card profile-card-horizontal border-dark shadow-lg overflow-hidden">
+        <div class="card profile-card-horizontal border-dark">
             <div class="row g-0 align-items-center">
                 <div class="col-md-4 profile-img-container bg-white text-center py-5">
-                    <div class="image-wrapper shadow">
-                        <img src="{{ asset('img/foto-kamu.jpg') }}" alt="Profile" class="img-fluid rounded-circle border border-4 border-white">
-                    </div>
+      <div class="image-frame">
+    <div class="image-sweep">
+        <img src="{{ asset('img/foto_about_me.jpeg') }}" alt="Profile">
+    </div>
+</div>
+
                 </div>
                 <div class="col-md-8 bg-white">
                     <div class="card-body p-4 p-lg-5">
-                        <h6 class="text-uppercase fw-bold text-muted mb-2 tracking-widest animate-text">About Me</h6>
+                        <h6 class="text-uppercase fw-bold text-muted mb-2 tracking-widest animate-text">Tentang Saya</h6>
         
                         <p class="text-secondary mb-4 animate-text">
-                            Berpengalaman dalam membangun aplikasi web yang responsif dan performa tinggi. Fokus pada struktur kode yang bersih dan pengalaman pengguna yang intuitif.
-                        </p>
+                            Saya adalah seorang web developer yang memiliki ketertarikan besar pada dunia pengembangan website dan teknologi digital. Saya lahir di Jakarta pada 29 Agustus 2007, dan saat ini menjalani kehidupan serta aktivitas sehari-hari di Yogyakarta. Latar belakang tersebut membentuk saya menjadi pribadi yang mudah beradaptasi dan terbuka terhadap lingkungan serta tantangan baru.
+
+Saat ini, saya sedang menempuh pendidikan di Universitas Islam Indonesia dengan jurusan Teknik Informatika, di mana saya terus mengembangkan pemahaman tentang teknologi, pemrograman, dan konsep dasar pengembangan perangkat lunak. Perkuliahan menjadi wadah bagi saya untuk memperdalam teori sekaligus mengasah kemampuan praktik dalam dunia IT.
+
+Saya memiliki ketertarikan besar dalam mempelajari berbagai bahasa pemrograman, khususnya HTML, CSS, JavaScript, Laravel, dan Python. Saya terbiasa menggunakan HTML dan CSS untuk membangun tampilan website yang responsif dan terstruktur, JavaScript untuk menambahkan interaksi, serta Laravel dan PHP untuk mengelola logika backend. Selain itu, saya juga mempelajari Python sebagai bagian dari eksplorasi logika pemrograman dan pengembangan teknologi lainnya.
+
+Dalam proses belajar dan mengembangkan proyek, saya selalu berusaha memahami tidak hanya bagaimana sebuah fitur dibuat, tetapi juga alasan di balik penggunaannya.
                         
-                        <div class="d-flex flex-wrap gap-3 mt-4 animate-buttons">
-                            
-                            <div class="d-flex align-items-center gap-2">
-                                <a href="#" class="social-link border border-dark rounded-circle"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="social-link border border-dark rounded-circle"><i class="fab fa-github"></i></a>
-                                <a href="#" class="social-link border border-dark rounded-circle"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
+      <div class="d-flex gap-3 animate-buttons">
+    <a href="https://www.github.com/Zenn-Web"
+       target="_blank"
+       class="social-link github"
+       aria-label="GitHub">
+        <i class="bi bi-github"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/zen-agusti-2928ba38a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+       target="_blank"
+       class="social-link linkedin"
+       aria-label="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+    </a>
+
+    <a href="https://www.instagram.com/zenagust_?igsh=MW5jcXZsNGx1ajY1dw=="
+       target="_blank"
+       class="social-link instagram"
+       aria-label="Instagram">
+        <i class="bi bi-instagram"></i>
+    </a>
+</div>
+
                     </div>
                 </div>
             </div>
@@ -99,8 +100,8 @@
                
 
 
-<section class="py-5 bg-white text-dark d-flex" style="margin-top: -1px;"> 
-    <div class="container-fluid px-lg-5"> <div class="text-center mb-5">
+<section id="skills" class="py-5 my-5 bg-white reveal-section text-dark d-flex" style="scroll-margin-top: 100px;"> 
+    <div class="container-fluid py-5 px-lg-5"> <div class="text-center mb-5">
             <h2 class="fw-bold display-6">Keahlian Saya</h2>
             <p class="text-muted">Beberapa teknologi yang sedang saya pelajari untuk membangun website.</p>
         </div>
@@ -150,34 +151,122 @@
         </div> </div> </section>
 
 
- <section class="bg-white text-black py-5 max-vh-100 d-flex align-items-center">          
-<div class="container">
-
-
-    <h2 class="fw-bold mb-4">My Resources</h2>
-
-   <div class="container">
-    <div class="col-md-6 col-lg-4 d-flex justify-content-center">
-    <div class="card resource-card h-100 w-100 border-0 shadow-lg p-4" style="border-radius: 20px; border: 1px solid #000000;">
+<section id="resources" class="my-5 py-5 bg-white reveal-section">
+    <div class="container">
         
-   <div class="img-container d-flex align-items-center justify-content-center mb-3" 
-     style="background-color: transparent; border-radius: 15px; height: 200px; overflow: hidden;">
-     
-    <img src="{{ asset('img/eyegil.porto.png') }}"
-         class="img-fluid"
-         style="max-height: 100%; width: auto; object-fit: contain; border: 1px solid #e0e0e0; border-radius: 8px;" 
-         alt="UX Audit Checklist">
-</div>
-        <div class="card-body p-0 text-start"> <span class="badge bg-light text-primary mb-2 px-3 py-2">UX</span>
-            <h5 class="fw-bold mb-2">UX Audit Checklist</h5>
-            <p class="text-muted small mb-0">
-                Checklist untuk mengevaluasi dan meningkatkan pengalaman pengguna.
-            </p>
+        <div class="mb-5">
+            <h2 class="fw-bold text-dark mb-1">Projek Saya</h2>
+            <div style="width: 40px; height: 3px; "></div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card card-elegant border-0 shadow-sm h-100 overflow-hidden">
+                    
+                    <div class="image-container position-relative overflow-hidden">
+                        <img src="{{ asset('img/eyegil.porto.png') }}" class="img-hover" alt="UX Audit">
+                    </div>
+
+                    <div class="position-absolute top-0 start-0 m-3 d-flex flex-wrap gap-2" style="z-index: 10;">
+<span class="badge rounded-pill bg-dark border border-secondary px-3 py-2">
+        UI/UX Design
+    </span>
+
+    <span class="badge rounded-pill bg-dark border border-secondary px-3 py-2">
+        Digital Business
+    </span>
+
+    <span class="badge rounded-pill bg-dark border border-secondary px-3 py-2">
+        Service provider
+    </span>
+            
+                    </div>
+                  
+                    <div class="card-body px-4 pb-4">
+                        <h5 class="fw-bold mb-2">UX Audit Checklist</h5>
+                        <p class="text-muted small mb-4">
+                            Checklist komprehensif untuk mengevaluasi dan meningkatkan pengalaman pengguna secara mendalam.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <a href="https://eyegil.com" class="text-decoration-none fw-bold link-primary small">View Project</a>
+                            <span class="text-secondary small" style="font-size: 0.7rem;">2025</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
+</section>
+
+<section id="contact" class="contact-section reveal-section">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2 class="contact-title fw-bold" >Get in Touch</h2>
+            <p class="contact-subtitle">I'd like to hear from you!</p>
+            
+            <div class="contact-details">
+                <div class="detail-item">
+                    <i class="bi bi-envelope"></i>
+                    <a href="mailto:zenifenagusti70@gmail.com">zenifenagusti70@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-socials">
+                <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+           <form action="{{ route('contact.store') }}" method="POST" class="contact-form">
+    @csrf
+    
+    {{-- Tampilkan pesan sukses --}}
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    
+    {{-- Tampilkan error validasi --}}
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
+    <div class="form-row">
+    <div class="form-group">
+        <label>Nama Depan</label>
+        <input type="text" name="first_name" value="{{ old('first_name') }}" placeholder="Nama depan Anda">
+    </div>
+    <div class="form-group">
+        <label>Nama Belakang</label>
+        <input type="text" name="last_name" value="{{ old('last_name') }}" placeholder="Nama belakang Anda">
+    </div>
 </div>
+<div class="form-group">
+    <label>Email *</label>
+    <input type="email" name="email" value="{{ old('email') }}" required placeholder="email@contoh.com">
 </div>
+<div class="form-group">
+    <label>Pesan</label>
+    <textarea name="message" rows="4" placeholder="Apa yang bisa saya bantu?">{{ old('message') }}</textarea>
+</div>
+<div class="button-wrapper">
+    <button type="submit" class="btn-send-contact">Kirim</button>
+</div>
+</form>
+        </div>
+    </div>
 
 </section>
+
 
 @endsection

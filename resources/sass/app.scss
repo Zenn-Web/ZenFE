@@ -1,35 +1,60 @@
-// 1. Panggil Bootstrap (Robot ini akan mengambil file dari folder node_modules)
 @import "bootstrap/scss/bootstrap";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
-.btn-custom-portfolio {
-    background-color: #000000; /* Warna awal hitam */
-    color: #ffffff;            /* Teks awal putih */
-    border: 2px solid #000000; /* Border hitam agar saat hover tetap rapi */
-    border-radius: 12px;       /* Opsional: sesuaikan dengan tema kartu kamu */
-    transition: all 0.3s ease; /* Animasi perpindahan warna halus */
-    font-weight: 500;
+// GLOBAL STYLES
+*, input, textarea, button, select {
+    font-family: 'Poppins', sans-serif !important;
 }
 
-.btn-custom-portfolio:hover {
-    background-color: #ffffff; /* Berubah jadi putih saat diarahin kursor */
-    color: #000000;            /* Teks berubah jadi hitam */
-    border: 2px solid #000000; /* Border muncul warna hitam */
-    transform: scale(1.05);    /* Opsional: tombol membesar dikit agar interaktif */
+// COLOR SYSTEM (TECH EMERALD)
+$emerald-light: #a7f3d0;
+$emerald-medium: #34d399;
+$emerald-dark: #0fb9a7;
+$emerald-deep: #0a8f7a;
+
+// VARIABLES
+$profile-size: 300px;
+$outer-circle-size: $profile-size + 100px;
+
+// KEYFRAMES ANIMATIONS
+@keyframes rotateGradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseSoft {
+    0%, 100% {
+        transform: scale(0.96);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.85;
+    }
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-dot {
+    0%, 100% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(0, 168, 132, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(0, 168, 132, 0);
+    }
 }
 
 
-
-// Variabel warna (opsional, untuk konsistensi)
-$green-light: #a8edc2; // Warna hijau muda
-$green-medium: #80e6a3; // Warna hijau menengah
-$green-dark: #00a884; // Hijau WhatsApp
-$profile-size: 300px; // Ukuran dasar lingkaran foto profil
-$outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
-
+// PROFILE ANIMATION SECTION
 .profile-animation-wrapper {
     position: relative;
-    width: $outer-circle-size; // Menentukan lebar total area animasi
-    height: $outer-circle-size; // Menentukan tinggi total area animasi
+    width: $outer-circle-size;
+    height: $outer-circle-size;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,33 +66,40 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     width: $outer-circle-size;
     height: $outer-circle-size;
     border-radius: 50%;
-    background: linear-gradient(45deg, $green-light 0%, $green-medium 100%);
-    animation: rotateGradient 10s linear infinite; // Animasi rotasi gradient
-    opacity: 0.8;
+    background: radial-gradient(
+        circle at 30% 30%,
+        $emerald-light 0%,
+        rgba($emerald-medium, 0.85) 40%,
+        rgba($emerald-dark, 0.9) 70%,
+        rgba($emerald-deep, 0.95) 100%
+    );
+    animation: rotateGradient 18s linear infinite;
+    opacity: 0.85;
+    filter: blur(1px);
     z-index: 1;
+    will-change: transform, opacity;
 }
 
 .pulsing-circle-outer,
 .pulsing-circle-inner {
     position: absolute;
     border-radius: 50%;
-    border: 2px solid rgba($green-dark, 0.5);
     z-index: 2;
-    animation: pulse 2s ease-out infinite; // Animasi denyut
+    animation: pulseSoft 3.5s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
 .pulsing-circle-outer {
-    width: $profile-size + 40px;
-    height: $profile-size + 40px;
-    animation-delay: 0s;
-    border-color: rgba($green-dark, 0.7);
+    width: $profile-size + 48px;
+    height: $profile-size + 48px;
+    border: 2px solid rgba($emerald-dark, 0.35);
 }
 
 .pulsing-circle-inner {
-    width: $profile-size + 20px;
-    height: $profile-size + 20px;
-    animation-delay: 0.5s; // Delay agar tidak bersamaan
-    border-color: rgba($green-dark, 0.4);
+    width: $profile-size + 24px;
+    height: $profile-size + 24px;
+    border: 1.5px solid rgba($emerald-medium, 0.4);
+    animation-delay: 1.2s;
 }
 
 .profile-picture-container {
@@ -75,117 +107,97 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     width: $profile-size;
     height: $profile-size;
     border-radius: 50%;
+    border: 6px solid $emerald-dark;
+    box-shadow:
+        inset 0 2px 6px rgba(0, 0, 0, 0.06),
+        inset 0 0 0 4px #ffffff,
+        0 18px 40px rgba($emerald-dark, 0.25);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 0 5px #fff, 0 0 0 7px $green-dark; // Border putih dan hijau
+    background: #fff;
     z-index: 3;
-    background-color: #f0f8ff; // Warna background jika gambar tidak penuh
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: linear-gradient(
+            135deg,
+            rgba(#ffffff, 0.45),
+            rgba(#ffffff, 0.05) 40%,
+            transparent 60%
+        );
+        mix-blend-mode: overlay;
+    }
 }
 
 .profile-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; // Memastikan gambar mengisi penuh lingkaran
-    object-position: top center; // Fokus pada bagian atas gambar
-    border-radius: 50%; // Pastikan gambar tetap bulat
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    display: block;
 }
 
 
-/* --- ANIMASI --- */
-@keyframes rotateGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-        opacity: 0.7;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0.95);
-        opacity: 0.7;
-    }
-}
-
-
-// Kotak kaca (Glassmorphism)
+// ORNAMEN BOXES
 .ornamen-box {
     position: absolute;
     z-index: 10;
-     background: rgba(0, 0, 0, 0.8); 
+    width: 65px;
+    height: 65px;
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 15px;
     border-radius: 18px;
-    font-size: 24px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    animation: floating 3s ease-in-out infinite; // Nama animasi, durasi, tipe gerak, dan diulang terus
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: floating 5s ease-in-out infinite;
 
     &.computer {
         top: -20px;
         right: -20px;
-        /* Durasi 3 detik, tanpa delay */
-        animation: floating-computer 3s ease-in-out infinite;
+        animation-delay: 0s;
+        padding: 15px;
     }
-  &.greek {
+
+    &.greek {
         bottom: 20px;
         left: -40px;
-        /* Durasi lebih lama (5 detik) agar gerakannya beda tempo */
-        animation: floating-greek 5s ease-in-out infinite;
-    }
-
-    /* 3. Animasi untuk Ikon Greek/Kuil (Gerakan Pendek) */
-@keyframes floating-greek {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-}
-
-@keyframes floating-badge {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-/* WAJIB ADA AGAR BISA MELAYANG */
-@keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-
-@media (max-width: 768px) {
-    .status-badge {
-        right: -20px; /* Lebih merapat di layar kecil */
+        animation-delay: 1.5s;
+        padding: 15px;
     }
 }
-// Badge status panjang
+
+// LIVE CLOCK STATUS BADGE
 .status-badge {
     position: absolute;
-    right: -120px; 
+    right: -103px;
     bottom: 40%;
     z-index: 100;
     will-change: transform;
-    background: rgba(0, 0, 0, 0.9); 
-    backdrop-filter: blur(8px); 
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
     color: #e9edef;
     padding: 8px 16px;
-    border-radius: 0 15px 15px 15px; 
+    border-radius: 0 15px 15px 15px;
     font-size: 14px;
-    
     display: flex;
     align-items: center;
     gap: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     white-space: nowrap;
- animation: floating-badge 4s ease-in-out 1s infinite;
+    animation: floating-badge 4s ease-in-out 1s infinite;
 
     .status-text {
         font-weight: 500;
@@ -195,91 +207,37 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
         font-size: 12px;
         color: rgba(255, 255, 255, 0.5);
         margin-left: 5px;
-        flex-shrink: 0; // Kunci agar jam tetap di dalam kotak
+        flex-shrink: 0;
     }
 
-    /* PINDAHKAN .dot KE DALAM SINI */
     .dot {
         width: 8px;
         height: 8px;
-        background-color: #00a884; 
+        background-color: #00a884;
         border-radius: 50%;
         display: inline-block;
         box-shadow: 0 0 8px rgba(0, 168, 132, 0.8);
         animation: pulse-dot 2s infinite;
     }
-
-   @keyframes floating-computer {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(5px, -10px); } // Ada sedikit gerakan ke samping
 }
 
-}
-
-
-
-
-
-.status-badge {
-    // ... kode position, background, dll tetap sama ...
-
-    .dot {
-        width: 8px;
-        height: 8px;
-        background-color: #00a884; 
-        border-radius: 50%;
-        display: inline-block;
-        box-shadow: 0 0 8px rgba(0, 168, 132, 0.8);
-        
-        /* TAMBAHKAN INI */
-        animation: pulse-dot 2s infinite; 
-    }
-}
-
-/* DEFINISI ANIMASI DENYUT */
-@keyframes pulse-dot {
-    0% {
-        transform: scale(0.9);
-        box-shadow: 0 0 0 0 rgba(0, 168, 132, 0.7);
-    }
-    70% {
-        transform: scale(1.1);
-        box-shadow: 0 0 0 10px rgba(0, 168, 132, 0);
-    }
-    100% {
-        transform: scale(0.9);
-        box-shadow: 0 0 0 0 rgba(0, 168, 132, 0);
-    }
-}
-.resource-card {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 22px;
-    background-color: #fff;
-    overflow: hidden;
-    position: relative;
-    
-    /* Animasi Utama */
-    transition: 
-        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), // Efek sedikit membal (bouncy)
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
-
-    /* Animasi saat muncul pertama kali (Fade In) */
-    animation: fadeInUp 0.8s ease backwards;
-
-    &:hover {
-        transform: translateY(-12px); /* Kartu terangkat */
-        border-color: rgba(99, 102, 241, 0.4); /* Warna border berubah biru tipis */
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12); /* Bayangan lebih dalam */
-        
-        .resource-img {
-            transform: scale(1.05); /* Gambar sedikit membesar */
-            filter: brightness(1.05); /* Gambar sedikit lebih terang */
-        }
+@media (max-width: 768px) {
+    .status-badge {
+        right: -20px;
     }
 }
 
 
+// ABOUT SECTION
+#about {
+    scroll-margin-top: 70px;
+}
+
+.about-section {
+    .card, .row, .col-md-4 {
+        overflow: visible;
+    }
+}
 
 .resource-img {
     width: 100%;
@@ -290,83 +248,154 @@ $outer-circle-size: $profile-size + 100px; // Ukuran lingkaran luar
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-/* Keyframes untuk animasi muncul pertama kali */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+.profile-card-horizontal {
+    opacity: 0;
+    transform: translateX(-50px);
+    border-radius: 0px;
+    border: 1px solid rgba(0,0,0,0.15);
+    outline: 2px solid rgba(0,0,0,0.2);
+    outline-offset: -1px;
+    background: #fff;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.8s ease,
+                box-shadow 0.4s ease;
+
+    &.reveal-card {
+        opacity: 1;
+        transform: translateX(0);
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .animate-text,
+        .animate-buttons {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        h6.animate-text { transition-delay: 0.2s; }
+        p.animate-text { transition-delay: 0.4s; }
+        .animate-buttons { transition-delay: 0.6s; }
     }
-    to {
+}
+
+
+// IMAGE FRAME
+.image-frame {
+    position: relative;
+    display: inline-block;
+    padding: 12px;
+    background: #fff;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border: 3px solid #000;
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    &::after {
+        bottom: 0;
+        right: 0;
+        border-left: none;
+        border-top: none;
+    }
+}
+
+.image-sweep {
+    overflow: hidden;
+    clip-path: inset(0 100% 0 0);
+
+    img {
+        display: block;
+        width: 260px;
+        height: auto;
+        border-radius: 4px;
+    }
+}
+
+
+// SOCIAL BUTTONS
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                background-color 0.4s, 
+                color 0.4s, 
+                box-shadow 0.4s;
+
+    &:hover {
+        background: #000;
+        color: #fff;
+        transform: scale(1.2) translateY(-5px);
+        box-shadow: 7px 7px 0px #000;
+    }
+
+    &:active {
+        transform: scale(1) translateY(0);
+        box-shadow: 0px 0px 0px #000;
+    }
+
+    &.github:hover {
+        background: #333;
+        border-color: #333;
+        box-shadow: 7px 7px 0px #333;
+    }
+
+    &.linkedin:hover {
+        background: #0077b5;
+        border-color: #0077b5;
+        box-shadow: 7px 7px 0px #0077b5;
+    }
+
+    &.instagram:hover {
+        background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        border-color: #dc2743;
+        box-shadow: 7px 7px 0px #dc2743;
+    }
+}
+
+
+// ANIMATION STATES
+.animate-buttons {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+
+    &.show {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Font Styling */
-.fw-black { font-weight: 900; }
-.tracking-widest { letter-spacing: 2.0em; }
-
-/* Card Styling */
-.profile-card-horizontal {
-    border-radius: 0; /* Boxy look yang elegan */
-    border: 3px solid #000 !important;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.fw-black { font-weight: 900; }
-.tracking-widest { letter-spacing: 0.2em; }
-
-/* Card Styling */
-.profile-card-horizontal {
-    border-radius: 0; /* Boxy look yang elegan */
-    border: 3px solid #000 !important;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+section {
+    h1, h2, h3, p, .card, .row, .animate-text, .animate-buttons, .profile-card-horizontal {
+        opacity: 0;
+        transform: translateY(40px);
+        visibility: hidden;
+    }
 }
 
-.profile-card-horizontal:hover {
-    transform: translateY(-10px);
-    box-shadow: 20px 20px 0px #000 !important; /* Bayangan solid hitam */
-}
-
-/* Image Styling */
-.image-wrapper img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    transition: all 0.5s ease;
-}
-
-.profile-card-horizontal:hover .image-wrapper img {
-    transform: scale(1.1) rotate(5deg);
-}
-
-/* Social Links */
-.social-link {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    background: #000;
-    color: #fff;
-}
-
-/* Base Animation State */
-.animate-text, .animate-buttons {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    visibility: hidden; /* Tambahkan ini agar tidak mengganggu klik sebelum muncul */
-}
-
-/* Keadaan akhir: Elemen muncul sempurna */
-.animate-text.reveal, .animate-buttons.reveal {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-}
