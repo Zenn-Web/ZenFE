@@ -4,9 +4,16 @@
             Zenifen<span class="dot">.</span>
         </a>
 
+        <!-- HAMBURGER CUSTOM (Animated) -->
         <button class="navbar-toggler custom-toggler" type="button" 
-                data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-            <span class="navbar-toggler-icon"></span>
+                data-bs-toggle="collapse" 
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="mainNavbar">

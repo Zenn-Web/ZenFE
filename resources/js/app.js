@@ -128,5 +128,41 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelector('.image-sweep')?.classList.add('show');
 
 
-
+function animateElement(el, index) {
+    console.log('Animating:', el.tagName, el.textContent.substring(0, 20));
+    
+    // Cegah animasi dobel
+    if (el.classList.contains('animated')) {
+        console.log('Already animated, skipping:', el.tagName);
+        return;
+    }
+    el.classList.add('animated');
+    
+    let keyframes = [
+        { 
+            opacity: 0, 
+            transform: 'translateY(40px)' 
+        },
+        { 
+            opacity: 1, 
+            transform: 'translateY(0)' 
+        }
+    ];
+    
+    let options = {
+        duration: 800,
+        delay: index * 100,
+        fill: 'forwards',
+        easing: 'cubic-bezier(0.22, 1, 0.36, 1)'
+    };
+    
+    const animation = el.animate(keyframes, options);
+    
+    animation.onfinish = () => {
+        console.log('Finished:', el.tagName);
+        // Set final state manual untuk hindari glitch
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+    };
+}
 

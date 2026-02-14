@@ -122,29 +122,128 @@ html {
 
 
 
+// NAVBAR
 .custom-navbar {
     background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px); /* Efek kaca transparan modern */
+    backdrop-filter: blur(10px);
     padding: 18px 0;
     border-bottom: 1px solid #f1f1f1;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-// navbar
 .brand-logo {
     font-weight: 700;
     font-size: 1.6rem;
     color: #1a1a1a !important;
     letter-spacing: -0.5px;
+    
+    .dot {
+        color: #000000;
+    }
 }
 
-.brand-logo .dot {
-    color: #000000; /* Warna aksen biru modern */
+// HAMBURGER MENU
+.custom-toggler {
+    border: none !important;
+    padding: 0;
+    width: 32px;
+    height: 26px;
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    
+    .navbar-toggler-icon {
+        display: none;
+    }
+    
+    &:focus {
+        box-shadow: none !important;
+    }
+    
+    .hamburger-line {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #000;
+        border-radius: 3px;
+        position: absolute;
+        left: 0;
+        transition: all 0.4s ease;
+        
+        &:nth-child(1) { 
+            top: 0;
+        }
+        
+        &:nth-child(2) { 
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+        
+        &:nth-child(3) { 
+            bottom: 0; 
+        }
+    }
+    
+    // Animasi: Jadi panah
+    &[aria-expanded="true"] {
+        .hamburger-line {
+            &:nth-child(1) {
+                top: 50%;
+                left: 50%;
+                width: 50%;
+                transform: translate(-100%, -50%) rotate(-45deg);
+            }
+            
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            
+            &:nth-child(3) {
+                bottom: 50%;
+                left: 50%;
+                width: 50%;
+                transform: translate(-100%, 50%) rotate(45deg);
+            }
+        }
+    }
 }
 
-/* Menu Links */
+// NAVBAR COLLAPSE (Mobile Menu Container)
+.navbar-collapse {
+    // ✅ Speed fix (berlaku untuk semua ukuran layar)
+    transition: height 0.2s ease-in-out !important;
+    
+    &.collapsing {
+        transition: height 0.2s ease-in-out !important;
+    }
+    
+    // ✅ Mobile style (hanya untuk mobile)
+    @media (max-width: 991px) {
+        margin-top: 20px;
+        padding: 25px 20px;
+        background: #f8f9fa;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+}
+
+// NAV LINKS
 .nav-links-group {
     gap: 20px;
+    
+    @media (max-width: 991px) {
+        gap: 0;
+    }
+}
+
+.nav-item {
+    @media (max-width: 991px) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        
+        &:last-child {
+            border-bottom: none;
+        }
+    }
 }
 
 .custom-navbar .nav-link {
@@ -154,31 +253,58 @@ html {
     padding: 5px 0 !important;
     position: relative;
     transition: all 0.3s ease;
+    
+    // Desktop: underline effect
+    @media (min-width: 992px) {
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #000000;
+            transition: width 0.3s ease;
+        }
+        
+        &:hover::after,
+        &.active::after {
+            width: 100%;
+        }
+    }
+    
+    // Mobile: full width + background hover
+    @media (max-width: 991px) {
+        padding: 15px 20px !important;
+        border-radius: 8px;
+        display: block;
+        
+        &:hover,
+        &.active {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        &::after {
+            display: none; // Hide underline di mobile
+        }
+    }
+    
+    &:hover,
+    &.active {
+        color: #1a1a1a !important;
+    }
 }
 
-/* Garis bawah animasi saat hover & active */
-.custom-navbar .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    transition: width 0.3s ease;
+// NAV ACTIONS
+.nav-actions {
+    @media (max-width: 991px) {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
 }
 
-.custom-navbar .nav-link:hover::after,
-.custom-navbar .nav-link.active::after {
-    width: 100%;
-}
-
-.custom-navbar .nav-link:hover,
-.custom-navbar .nav-link.active {
-    color: #1a1a1a !important;
-}
-
-/* Tombol Action */
+// CONTACT BUTTON
 .btn-contact-me {
     background-color: #1a1a1a;
     color: #fff;
@@ -188,36 +314,48 @@ html {
     font-weight: 600;
     font-size: 0.9rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    
+    &:hover {
+        background-color: #333;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    // Mobile: full width
+    @media (max-width: 991px) {
+        width: 100%;
+        display: block;
+        padding: 14px 28px;
+    }
 }
 
-.btn-contact-me:hover {
-    background-color: #333;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Section Contact me */
-.custom-toggler {
-    border: none !important;
-}
-
-.custom-toggler:focus {
-    box-shadow: none !important;
-}
-
+// CONTACT SECTION - RESPONSIVE
 .contact-section {
     padding: 100px 0;
-    background-color: #ffffff; /* Background Putih Bersih */
+    background-color: #ffffff;
     color: #000000;
+    
+    @media (max-width: 767px) {
+        padding: 60px 0;
+    }
 }
 
 .contact-container {
     max-width: 1000px;
     margin: 0 auto;
-    display: flex;
-    gap: 100px;
     padding: 0 20px;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+    
+    // Mobile: stack vertical
+    @media (max-width: 991px) {
+        flex-direction: column;
+        gap: 50px;
+    }
 }
 
 .contact-info {
@@ -228,18 +366,35 @@ html {
         font-size: 3.5rem;
         font-weight: 500;
         margin-bottom: 5px;
+        
+        @media (max-width: 767px) {
+            font-size: 2.5rem;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 2rem;
+        }
     }
 
     .contact-subtitle {
         font-size: 1.1rem;
         color: #666;
         margin-bottom: 40px;
+        
+        @media (max-width: 767px) {
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
     }
 
     .contact-details a {
         color: #000;
         text-decoration: none;
         font-weight: 500;
+        
+        @media (max-width: 767px) {
+            font-size: 0.95rem;
+        }
     }
 
     .contact-socials {
@@ -247,12 +402,25 @@ html {
         display: flex;
         gap: 20px;
         
+        // Mobile: center
+        @media (max-width: 991px) {
+            justify-content: center;
+        }
+        
         .social-icon {
             color: #000;
             font-size: 1.3rem;
             transition: opacity 0.3s;
-            &:hover { opacity: 0.5; }
+            
+            &:hover { 
+                opacity: 0.5; 
+            }
         }
+    }
+    
+    // Mobile: center text
+    @media (max-width: 991px) {
+        text-align: center;
     }
 }
 
@@ -262,12 +430,19 @@ html {
     .form-row {
         display: flex;
         gap: 20px;
+        
+        // Mobile: stack vertical
+        @media (max-width: 767px) {
+            flex-direction: column;
+            gap: 0;
+        }
     }
 
     .form-group {
         margin-bottom: 25px;
         display: flex;
         flex-direction: column;
+        flex: 1;
 
         label {
             font-size: 0.85rem;
@@ -275,26 +450,45 @@ html {
             letter-spacing: 1px;
             margin-bottom: 8px;
             font-weight: 600;
+            
+            @media (max-width: 767px) {
+                font-size: 0.8rem;
+            }
         }
 
         input, textarea {
             border: none;
-            border-bottom: 2px solid #000; /* Style garis bawah minimalis */
+            border-bottom: 2px solid #000;
             padding: 10px 0;
             outline: none;
             background: transparent;
             font-family: inherit;
             transition: border-color 0.3s;
+            font-size: 1rem;
 
             &:focus {
                 border-color: #666;
             }
+            
+            @media (max-width: 767px) {
+                font-size: 0.95rem;
+            }
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
         }
     }
 
     .button-wrapper {
         display: flex;
         justify-content: flex-end;
+        
+        // Mobile: center
+        @media (max-width: 767px) {
+            justify-content: center;
+        }
     }
 
     .btn-send-contact {
@@ -304,13 +498,48 @@ html {
         padding: 12px 50px;
         font-weight: 600;
         cursor: pointer;
+        transition: all 0.3s ease;
         
         &:hover {
             background: #fff;
             color: #000;
         }
+        
+        // Mobile: full width
+        @media (max-width: 767px) {
+            width: 100%;
+            padding: 14px 30px;
+        }
     }
 }
 
+// DETAIL ITEM (kalau ada)
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    
+    i {
+        font-size: 1.2rem;
+    }
+}
 
+/* 📱 Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .contact-container {
+    gap: 60px;
+  }
+
+  .contact-info .contact-title {
+    font-size: 3rem;
+  }
+}
+
+/* 💻 Laptop */
+@media (min-width: 992px) {
+  .contact-container {
+    flex-direction: row;
+  }
+}
 

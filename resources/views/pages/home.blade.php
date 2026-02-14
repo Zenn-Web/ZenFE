@@ -4,14 +4,14 @@
 @section('content')
 
 
-<section class="bg-white text-black reveal-section py-5 min-vh-100 d-flex align-items-center">
+<section class="bg-white text-black reveal-section ">
     <div class="container"> 
         <div class="row align-items-center justify-content-center"> 
             
  <div class="col-lg-6 text-lg-start text-center mb-5 mb-lg-0">
-    <h1 class="display-4 fw-bold">Zenifen Caesarof Agusti</h1>
-    <p class="lead opacity-75 mb-0">Web Developer & Front End Engineer</p>
-    <p class="text-muted small mb-4">Crafting high-quality digital solutions with precision and code.</p>
+    <h1 class="display-4 fw-bold animate-on-scroll">Zenifen Caesarof Agusti</h1>
+    <p class="lead opacity-75 mb-0 animate-on-scroll">Web Developer & Front End Engineer</p>
+    <p class="text-muted small mb-4 animate-on-scroll">Crafting high-quality digital solutions with precision and code.</p>
 
     <div class="row g-3 justify-content-center justify-content-lg-start mt-3">
     <div class="col-auto">
@@ -47,49 +47,66 @@
     <div class="container">
         <div class="card profile-card-horizontal border-dark">
             <div class="row g-0 align-items-center">
-                <div class="col-md-4 profile-img-container bg-white text-center py-5">
-      <div class="image-frame">
-    <div class="image-sweep">
-        <img src="{{ asset('img/foto_about_me.jpeg') }}" alt="Profile">
-    </div>
-</div>
-
+                
+                <!-- IMAGE COLUMN -->
+                <div class="col-md-4 profile-img-container bg-white text-center py-4 py-md-5">
+                    <div class="image-frame">
+                        <div class="image-sweep">
+                            <img src="{{ asset('img/foto_about_me.jpeg') }}" alt="Profile Zenifen Agusti">
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- TEXT COLUMN -->
                 <div class="col-md-8 bg-white">
-                    <div class="card-body p-4 p-lg-5">
-                        <h6 class="text-uppercase fw-bold text-muted mb-2 tracking-widest animate-text">Tentang Saya</h6>
-        
-                        <p class="text-secondary mb-4 animate-text">
-                            Saya adalah seorang web developer yang memiliki ketertarikan besar pada dunia pengembangan website dan teknologi digital. Saya lahir di Jakarta pada 29 Agustus 2007, dan saat ini menjalani kehidupan serta aktivitas sehari-hari di Yogyakarta. Latar belakang tersebut membentuk saya menjadi pribadi yang mudah beradaptasi dan terbuka terhadap lingkungan serta tantangan baru.
-
-Saat ini, saya sedang menempuh pendidikan di Universitas Islam Indonesia dengan jurusan Teknik Informatika, di mana saya terus mengembangkan pemahaman tentang teknologi, pemrograman, dan konsep dasar pengembangan perangkat lunak. Perkuliahan menjadi wadah bagi saya untuk memperdalam teori sekaligus mengasah kemampuan praktik dalam dunia IT.
-
-Saya memiliki ketertarikan besar dalam mempelajari berbagai bahasa pemrograman, khususnya HTML, CSS, JavaScript, Laravel, dan Python. Saya terbiasa menggunakan HTML dan CSS untuk membangun tampilan website yang responsif dan terstruktur, JavaScript untuk menambahkan interaksi, serta Laravel dan PHP untuk mengelola logika backend. Selain itu, saya juga mempelajari Python sebagai bagian dari eksplorasi logika pemrograman dan pengembangan teknologi lainnya.
-
-Dalam proses belajar dan mengembangkan proyek, saya selalu berusaha memahami tidak hanya bagaimana sebuah fitur dibuat, tetapi juga alasan di balik penggunaannya.
+                    <div class="card-body p-3 p-md-4 p-lg-5">
                         
-      <div class="d-flex gap-3 animate-buttons">
-    <a href="https://www.github.com/Zenn-Web"
-       target="_blank"
-       class="social-link github"
-       aria-label="GitHub">
-        <i class="bi bi-github"></i>
-    </a>
+                        <!-- HEADER -->
+                        <h6 class="text-uppercase fw-bold text-muted mb-3 animate-text" style="letter-spacing: 2px;">
+                            Tentang Saya
+                        </h6>
+                        
+                        <!-- PARAGRAPH 1 -->
+                        <p class="text-secondary mb-3 animate-text">
+                            Saya adalah seorang web developer yang memiliki ketertarikan besar pada dunia pengembangan website dan teknologi digital. Saya lahir di Jakarta pada 29 Agustus 2007, dan saat ini menjalani kehidupan serta aktivitas sehari-hari di Yogyakarta.
+                        </p>
+                        
+                        <!-- PARAGRAPH 2 -->
+                        <p class="text-secondary mb-3 animate-text">
+                            Saat ini, saya sedang menempuh pendidikan di Universitas Islam Indonesia dengan jurusan Teknik Informatika, di mana saya terus mengembangkan pemahaman tentang teknologi, pemrograman, dan konsep dasar pengembangan perangkat lunak.
+                        </p>
+                        
+                        <!-- PARAGRAPH 3 -->
+                        <p class="text-secondary mb-4 animate-text">
+                            Saya memiliki ketertarikan besar dalam mempelajari berbagai bahasa pemrograman, khususnya HTML, CSS, JavaScript, Laravel, dan Python. Dalam proses belajar dan mengembangkan proyek, saya selalu berusaha memahami tidak hanya bagaimana sebuah fitur dibuat, tetapi juga alasan di balik penggunaannya.
+                        </p>
+                        
+                        <!-- SOCIAL BUTTONS -->
+                        <div class="d-flex flex-column flex-sm-row gap-3 mt-4 animate-buttons">
+                            <a href="https://www.github.com/Zenn-Web"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="social-link github"
+                               aria-label="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
 
-    <a href="https://www.linkedin.com/in/zen-agusti-2928ba38a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-       target="_blank"
-       class="social-link linkedin"
-       aria-label="LinkedIn">
-        <i class="bi bi-linkedin"></i>
-    </a>
+                            <a href="https://www.linkedin.com/in/zen-agusti-2928ba38a"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="social-link linkedin"
+                               aria-label="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
 
-    <a href="https://www.instagram.com/zenagust_?igsh=MW5jcXZsNGx1ajY1dw=="
-       target="_blank"
-       class="social-link instagram"
-       aria-label="Instagram">
-        <i class="bi bi-instagram"></i>
-    </a>
-</div>
+                            <a href="https://www.instagram.com/zenagust_"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="social-link instagram"
+                               aria-label="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </div>
 
                     </div>
                 </div>
@@ -213,9 +230,9 @@ Dalam proses belajar dan mengembangkan proyek, saya selalu berusaha memahami tid
             </div>
 
             <div class="contact-socials">
-                <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.github.com/Zenn-Web" class="social-icon"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/zen-agusti-2928ba38a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/zenagust_?igsh=MW5jcXZsNGx1ajY1dw==" class="social-icon"><i class="bi bi-instagram"></i></a>
             </div>
         </div>
 
