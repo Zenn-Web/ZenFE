@@ -118,7 +118,7 @@
 
 
 <section id="skills" class="py-5 my-5 bg-white reveal-section text-dark d-flex" style="scroll-margin-top: 100px;"> 
-    <div class="container-fluid py-5 px-lg-5"> <div class="text-center mb-5">
+    <div class="container py-5 px-0"> <div class="text-center mb-5">
             <h2 class="fw-bold display-6">Keahlian Saya</h2>
             <p class="text-muted">Beberapa teknologi yang sedang saya pelajari untuk membangun website.</p>
         </div>
@@ -200,12 +200,12 @@
                     </div>
                   
                     <div class="card-body px-4 pb-4">
-                        <h5 class="fw-bold mb-2">UX Audit Checklist</h5>
+                        <h5 class="fw-bold mb-2">Company Website Development – Eyegil.com</h5>
                         <p class="text-muted small mb-4">
-                            Checklist komprehensif untuk mengevaluasi dan meningkatkan pengalaman pengguna secara mendalam.
+Berperan dalam pengembangan website perusahaan Eyegil.co untuk mendukung kebutuhan digital dan online presence.
                         </p>
                         <div class="d-flex justify-content-between align-items-center mt-auto">
-                            <a href="https://eyegil.com" class="text-decoration-none fw-bold link-primary small">View Project</a>
+                            <a href="https://eyegil.com" class="text-decoration-none fw-bold link-primary small">Lihat Project</a>
                             <span class="text-secondary small" style="font-size: 0.7rem;">2025</span>
                         </div>
                     </div>

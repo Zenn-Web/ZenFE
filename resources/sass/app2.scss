@@ -210,20 +210,34 @@ html {
 
 // NAVBAR COLLAPSE (Mobile Menu Container)
 .navbar-collapse {
-    // ✅ Speed fix (berlaku untuk semua ukuran layar)
-    transition: height 0.2s ease-in-out !important;
+    // ⚡ INSTANT transition
+    transition: height 0.15s ease-out !important;
     
     &.collapsing {
-        transition: height 0.2s ease-in-out !important;
+        // ⚡ Saat animasi, lebih cepat lagi
+        transition: height 0.15s ease-out !important;
+        // Gunakan GPU acceleration
+        transform: translateZ(0);
+        will-change: height;
     }
     
-    // ✅ Mobile style (hanya untuk mobile)
+    // Optimize rendering
+    &.show {
+        // Hapus will-change setelah selesai
+        will-change: auto;
+    }
+    
+    // 📱 Mobile style
     @media (max-width: 991px) {
         margin-top: 20px;
         padding: 25px 20px;
         background: #f8f9fa;
         border-radius: 16px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        
+        // ⚡ Hardware acceleration untuk smooth animation
+        transform: translateZ(0);
+        backface-visibility: hidden;
     }
 }
 
