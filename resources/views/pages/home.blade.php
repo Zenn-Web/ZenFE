@@ -198,7 +198,6 @@
     </span>
             
                     </div>
-                  
                     <div class="card-body px-4 pb-4">
                         <h5 class="fw-bold mb-2">Company Website Development – Eyegil.com</h5>
                         <p class="text-muted small mb-4">

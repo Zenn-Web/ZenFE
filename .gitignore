@@ -1,6 +1,5 @@
 *.log
 .DS_Store
-.env
 .env.backup
 .env.production
 .phpactor.json
@@ -12,8 +11,6 @@
 /.vscode
 /.zed
 /auth.json
-/node_modules
-/public/build
 /public/hot
 /public/storage
 /storage/*.key
