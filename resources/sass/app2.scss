@@ -4,6 +4,7 @@
 
 html {
     /* scroll-behavior: smooth; (Dihapus karena sudah pakai Lenis) */
+    scroll-padding-top: 68px; /* Fallback for initial page load hash anchor */
 }
 
 /* Container Utama Kartu */
@@ -11,7 +12,7 @@ html {
 
 
 #home, #about, #skills, #resources, #contact {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 68px;
 }
 
 .reveal-section {
@@ -298,7 +299,7 @@ html {
 .custom-navbar {
     background-color: var(--bg-navbar);
     backdrop-filter: blur(10px);
-    padding: 18px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--border-light);
     font-family: 'Plus Jakarta Sans', sans-serif;
 
@@ -310,7 +311,7 @@ html {
 
 .brand-logo {
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--text-primary) !important;
     letter-spacing: -0.5px;
     
@@ -989,6 +990,104 @@ textarea.is-invalid {
     position: relative;
     z-index: 2;
     transition: background-color 0.3s ease;
+
+    // ── Background image variant ──────────────────────────────────────
+    &.hero-bg-section {
+        background-color: transparent;
+    }
+
+    .hero-bg-image-wrapper {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+            display: block;
+            filter: saturate(0.85);
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            inset: 0;
+            // Gradient: more opaque at top/bottom, lighter in centre
+            background: linear-gradient(
+                to bottom,
+                rgba(10, 8, 5, 0.62) 0%,
+                rgba(10, 8, 5, 0.48) 45%,
+                rgba(10, 8, 5, 0.72) 100%
+            );
+        }
+    }
+
+    // Light-on-dark text modifiers
+    .hero-badge-light {
+        color: rgba(255, 255, 255, 0.9) !important;
+        border-color: rgba(255, 255, 255, 0.35) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(6px);
+    }
+
+    .hero-title-light {
+        color: #ffffff !important;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-bio-light {
+        color: rgba(255, 255, 255, 0.82) !important;
+    }
+
+    // Centered CTA
+    .hero-cta-center {
+        justify-content: center;
+    }
+
+    // Light button overrides
+    .btn-solid-light {
+        background-color: #ffffff !important;
+        color: #1c1917 !important;
+        border-color: #ffffff !important;
+
+        &:hover {
+            background-color: transparent !important;
+            color: #ffffff !important;
+        }
+    }
+
+    .btn-outline-light {
+        background-color: transparent !important;
+        color: #ffffff !important;
+        border-color: rgba(255, 255, 255, 0.7) !important;
+
+        &:hover {
+            background-color: #ffffff !important;
+            color: #1c1917 !important;
+        }
+    }
+
+    // Centered glass badge (inline, not card-positioned)
+    .hero-glass-centered {
+        position: static;
+        display: inline-block;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgba(255, 255, 255, 0.12) !important;
+        border: 1px solid rgba(255, 255, 255, 0.22) !important;
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-radius: 20px;
+        padding: 16px 24px;
+
+        .glass-badge-title,
+        .glass-badge-text {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+    }
 
     .hero-classic-bg {
         position: absolute;

@@ -16,6 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
         infinite: false,
     });
 
+    // Dynamic navbar height calculation for perfect scroll offset
+    const updateNavbarHeight = () => {
+        const navbar = document.querySelector('.custom-navbar');
+        if (navbar) {
+            const h = navbar.offsetHeight;
+            document.documentElement.style.setProperty('--navbar-height', `${h}px`);
+            document.documentElement.style.scrollPaddingTop = `${h}px`;
+        }
+    };
+    updateNavbarHeight();
+    setTimeout(updateNavbarHeight, 150); // Fallback for transition rendering delay
+    window.addEventListener('resize', updateNavbarHeight);
+
     function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
@@ -92,23 +105,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Cek jika menu mobile sedang terbuka
                 const isMobileMenuOpen = navbarCollapse && navbarCollapse.classList.contains('show');
-                
-                // Offset selaras dengan scroll-margin-top: 75px di CSS (= tinggi navbar)
-                const scrollOptions = { 
-                    offset: -75, 
-                    duration: 1.4,
-                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+
+                const doScroll = () => {
+                    const navbar = document.querySelector('.custom-navbar');
+                    const navbarH = navbar ? navbar.offsetHeight : 68;
+                    
+                    // Calculate EXACT absolute scroll position — no ambiguity with Lenis offset behavior
+                    const elementAbsoluteTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const scrollTarget = elementAbsoluteTop - navbarH;
+
+                    lenis.scrollTo(scrollTarget, {
+                        duration: 1.4,
+                        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                    });
                 };
 
                 if (isMobileMenuOpen && navbarCollapse.contains(this)) {
                     const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
                     if (bsCollapse) bsCollapse.hide();
-                    
-                    setTimeout(() => {
-                        lenis.scrollTo(targetElement, scrollOptions);
-                    }, 200);
+                    setTimeout(doScroll, 200);
                 } else {
-                    lenis.scrollTo(targetElement, scrollOptions);
+                    doScroll();
                 }
 
                 // Update URL tanpa refresh (opsional)
@@ -344,6 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "project.flow": "Workflow / Flow Description",
         "project.live_demo": "Live Demo",
         "project.github": "View on GitHub",
+        "project.scroll_hint": "Scroll to explore",
 
         // Dynamic Project details
         "project.title.company-website-eyegil": "Company Website Development - Eyegil.com",

@@ -37,17 +37,6 @@
                 </ul>
             </div>
 
-            <!-- Column 3: Current Status & Image Widget -->
-            <div class="col-lg-4 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-center mt-2 mt-lg-0">
-                <div class="position-relative overflow-hidden rounded shadow-sm mb-2" style="width: 240px; aspect-ratio: 16/9; border: 1px solid rgba(255,255,255,0.1);">
-                    <!-- Image -->
-                    <img src="{{ asset('img/focus-man.png') }}" alt="Focus" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                    <!-- Hover Overlay -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style="background: rgba(0, 0, 0, 0.7); opacity: 0; transition: opacity 0.3s ease; cursor: default;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
-                        <span class="text-white fw-bold" style="letter-spacing: 1px; font-size: 0.9rem;" data-i18n="footer.still_making">Masih Membuat Website</span>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <hr class="footer-divider mb-4">

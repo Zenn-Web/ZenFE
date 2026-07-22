@@ -12,9 +12,15 @@
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-8oflFekz.js",
+    "file": "assets/app-BmFtVJP1.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/detail-animations.js": {
+    "file": "assets/detail-animations-DM1Qh--W.js",
+    "name": "detail-animations",
+    "src": "resources/js/detail-animations.js",
     "isEntry": true
   },
   "resources/js/projectranslate.js": {
@@ -24,7 +30,7 @@
     "isEntry": true
   },
   "resources/sass/Detailproject.scss": {
-    "file": "assets/Detailproject-CmjHFdpo.css",
+    "file": "assets/Detailproject-oi4pADuJ.css",
     "src": "resources/sass/Detailproject.scss",
     "isEntry": true,
     "name": "Detailproject",
@@ -33,7 +39,7 @@
     ]
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-BqC60CNY.css",
+    "file": "assets/app-1YTv1P4r.css",
     "src": "resources/sass/app.scss",
     "isEntry": true,
     "name": "app",
@@ -42,7 +48,7 @@
     ]
   },
   "resources/sass/app2.scss": {
-    "file": "assets/app2-Gw5cSsb3.css",
+    "file": "assets/app2-Ez5eGxvP.css",
     "src": "resources/sass/app2.scss",
     "isEntry": true,
     "name": "app2",

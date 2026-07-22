@@ -4,12 +4,16 @@
 @section('content')
 
 
-    <section id="home" class="hero-classic-section position-relative overflow-hidden">
-        <!-- Background Grid Pattern & Ornaments -->
-        <div class="hero-classic-bg">
-            <div class="classic-grid-pattern"></div>
-            
-            <!-- Sparkle Star Ornaments (4-Pointed Stars) -->
+    <section id="home" class="hero-classic-section hero-bg-section position-relative overflow-hidden">
+        <!-- Full Background Image -->
+        <div class="hero-bg-image-wrapper">
+            <img src="{{ asset('img/hero-classical-muse.png') }}" alt="" class="hero-bg-image" aria-hidden="true">
+            <!-- Dark Overlay for readability -->
+            <div class="hero-bg-overlay"></div>
+        </div>
+
+        <!-- Sparkle Star Ornaments -->
+        <div class="hero-classic-bg" style="z-index:2;">
             <div class="ornament-sparkle sparkle-1">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L15 9L24 12L15 15L12 24L9 15L0 12L9 9L12 0Z"/></svg>
             </div>
@@ -19,57 +23,35 @@
             <div class="ornament-sparkle sparkle-3">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L15 9L24 12L15 15L12 24L9 15L0 12L9 9L12 0Z"/></svg>
             </div>
-
-
         </div>
-        
-        <div class="container position-relative" style="z-index: 2;">
-            <div class="row align-items-center justify-content-between g-5">
 
-                <!-- TEXT COLUMN -->
-                <div class="col-lg-6 text-start">
+        <div class="container position-relative" style="z-index: 3;">
+            <div class="row justify-content-center">
+                <!-- TEXT COLUMN — Centered -->
+                <div class="col-lg-8 col-xl-7 text-center">
                     <!-- Eyebrow Badge Pill -->
                     <div class="hero-classic-badge-wrapper animate-on-scroll">
-                        <span class="hero-classic-badge-pill" data-i18n="hero.role">Web Developer &amp; Front End Enthusiast</span>
+                        <span class="hero-classic-badge-pill hero-badge-light" data-i18n="hero.role">Web Developer &amp; Front End Enthusiast</span>
                     </div>
 
-                    <!-- Name / Main Heading 1 -->
-                    <h1 class="hero-classic-title fw-semibold animate-on-scroll text-reveal">
+                    <!-- Name / Main Heading -->
+                    <h1 class="hero-classic-title hero-title-light fw-semibold animate-on-scroll text-reveal">
                         Zenifen Caesarof Agusti
                     </h1>
 
                     <!-- Sub Heading / Paragraph -->
-                    <p class="hero-classic-bio animate-on-scroll" data-i18n="hero.extra">
+                    <p class="hero-classic-bio hero-bio-light animate-on-scroll mx-auto" data-i18n="hero.extra">
                         Saya membuat website yang menggabungkan desain modern, performa tinggi, dan pengalaman pengguna yang berkesan
                     </p>
 
                     <!-- CTA Buttons -->
-                    <div class="hero-classic-cta animate-buttons">
-                        <a href="#resources" class="btn-classic-solid" data-i18n="hero.btn.projects">Lihat Karya Saya</a>
-                        <a href="#contact" class="btn-classic-outline" data-i18n="hero.btn.contact">Mari Ngobrol</a>
+                    <div class="hero-classic-cta hero-cta-center animate-buttons">
+                        <a href="#resources" class="btn-classic-solid btn-solid-light" data-i18n="hero.btn.projects">Lihat Karya Saya</a>
+                        <a href="#contact" class="btn-classic-outline btn-outline-light" data-i18n="hero.btn.contact">Mari Ngobrol</a>
                     </div>
-                </div>
 
-                <!-- IMAGE COLUMN (Tall Rounded Card with Glassmorphic Overlay) -->
-                <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
-                    <div class="hero-classic-card animate-on-scroll">
-                        <div class="hero-classic-card-image-wrapper">
-                            <img src="{{ asset('img/hero-classical-muse.png') }}" class="img-fluid hero-classic-card-image" alt="Zenifen Caesarof Agusti">
-                        </div>
-                        
-                        <!-- Floating Glassmorphic Overlay Badge -->
-                        <div class="hero-classic-glass-badge">
-                            <div class="glass-badge-header">
-                                <span class="glass-dot-active"></span>
-                                <span class="glass-badge-title" data-i18n="hero.glass.badge">STATUS UTAMA</span>
-                            </div>
-                            <p class="glass-badge-text" data-i18n="hero.glass.text">
-                                Sedang mengembangkan aplikasi web performa tinggi dengan arsitektur modern.
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </section>
@@ -191,6 +173,8 @@
                                 <span class="badge-tech-classic" style="opacity: 0.7; border-style: dashed; background-color: transparent; color: inherit;">Next.js</span>
                                 <span class="badge-tech-classic" style="opacity: 0.7; border-style: dashed; background-color: transparent; color: inherit;">Node.js</span>
                                 <span class="badge-tech-classic" style="opacity: 0.7; border-style: dashed; background-color: transparent; color: inherit;">Java</span>
+                                <span class="badge-tech-classic" style="opacity: 0.7; border-style: dashed; background-color: transparent; color: inherit;">PostgreSQL</span>
+                                <span class="badge-tech-classic" style="opacity: 0.7; border-style: dashed; background-color: transparent; color: inherit;">Go</span>
                             </div>
                         </div>
 
@@ -229,14 +213,17 @@
                                 <span class="badge-tech-classic">Git</span>
                                 <span class="badge-tech-classic">GitHub</span>
                                 <span class="badge-tech-classic">Postman</span>
+                                <span class="badge-tech-classic">Supabase</span>
                             </div>
                             
                             <h6 class="skill-subtitle-classic text-muted mb-3" style="font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;" data-i18n="skills.lingkungan">Lingkungan Pengembangan</h6>
                             <div class="d-flex flex-wrap gap-2">
                                 <span class="badge-tech-classic">VS Code</span>
+                                <span class="badge-tech-classic">IntelliJ IDEA</span>
                                 <span class="badge-tech-classic">NPM</span>
                                 <span class="badge-tech-classic">Vite</span>
-                                <span class="badge-tech-classic">MCP (AI Tools)</span>
+                                <span class="badge-tech-classic">Laragon</span>
+                                <span class="badge-tech-classic">Canva</span>
                             </div>
                         </div>
 
