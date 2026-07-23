@@ -67,19 +67,41 @@
     }
 }
 
-/* DEVELOPER HUD CARD */
-.about-hud-card {
-    background-color: var(--bg-card) !important;
-    border: 1px solid var(--border-primary) !important;
-    border-radius: 24px !important;
-    padding: 2.5rem;
-    box-shadow: var(--shadow-md) !important;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+/* CLEAN MINIMALIST PHOTO CARD (Static) */
+.about-clean-photo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    max-width: 320px;
+    width: 100%;
+}
+
+.about-clean-image-wrap {
     overflow: hidden;
+    border-radius: 14px;
+    
+    .about-clean-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 14px;
+    }
+}
+
+.about-clean-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.about-clean-role {
+    font-size: 0.82rem;
+    color: var(--accent-emerald);
+    font-weight: 500;
 }
 
 .about-hud-top {

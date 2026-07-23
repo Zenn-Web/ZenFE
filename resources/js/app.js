@@ -372,7 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "project.title.umkm-business-tumbuh": "MSME Business Management - TUMBUH",
         "project.category.umkm-business-tumbuh": "UI/UX &nbsp;&bull;&nbsp; DEVELOPMENT &nbsp;&bull;&nbsp; Personal Growth Platform &nbsp;&bull;&nbsp; AI Growth Partner",
         "project.description.umkm-business-tumbuh": "Contributed to an AI experiment that accelerates MSME growth through automated data processing and financial reporting.",
-        "project.flow_description.umkm-business-tumbuh": "This application was developed using Next.js for the frontend and Python for the AI backend. Key features include an automated dashboard, real-time financial reports, and AI-based business recommendations. The development process included user research, prototyping, agile development, and testing.",
+        "project.flow_description.umkm-business-tumbuh": "This application was developed using React.js for the frontend and Python for the AI backend. Key features include an automated dashboard, real-time financial reports, and AI-based business recommendations. The development process included user research, prototyping, agile development, and testing.",
 
         "project.title.training-platform-amazain": "Training Platform - AMAZAIN",
         "project.category.training-platform-amazain": "UI/UX &nbsp;&bull;&nbsp; DEVELOPMENT &nbsp;&bull;&nbsp; Training Consultant &nbsp;&bull;&nbsp; Human Capital Development",

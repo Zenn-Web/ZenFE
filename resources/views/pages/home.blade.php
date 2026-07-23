@@ -58,7 +58,7 @@
 
     <section id="about" class="about-section reveal-section">
         <div class="container">
-            <div class="about-layout-row row align-items-stretch">
+            <div class="row align-items-center justify-content-center g-4 g-lg-5 mx-auto" style="max-width: 1050px;">
                 <!-- BIO COLUMN -->
                 <div class="col-lg-6 about-bio-col animate-on-scroll">
                     <span class="about-eyebrow" data-i18n="about.title">Tentang Saya</span>
@@ -68,11 +68,11 @@
                     <p class="about-desc animate-text mb-4" data-i18n="about.p1">
                         Hai! Saya Zenifen, seorang <strong>Front-End Developer</strong> yang fokus membangun antarmuka web interaktif. Berawal dari rasa penasaran dengan HTML, kini saya merancang arsitektur web modern menggunakan <strong>React, JavaScript modern, dan Tailwind CSS</strong>.
                     </p>
-                    <p class="about-desc animate-text text-secondary" data-i18n="about.p2">
+                    <p class="about-desc animate-text text-secondary mb-4" data-i18n="about.p2">
                         Bagi saya, <i>coding</i> bukan hanya soal sintaks, tapi tentang memecahkan masalah. Mulai dari <strong>optimasi performa</strong> (Core Web Vitals) hingga implementasi <strong>Design System</strong>, saya memastikan setiap baris kode memberi dampak nyata pada kenyamanan pengguna.
                     </p>
                     
-                    <div class="mt-2 animate-buttons">
+                    <div class="animate-buttons">
                         <a href="https://www.github.com/Zenn-Web" target="_blank" rel="noopener noreferrer" class="social-link github" aria-label="GitHub">
                             <i class="bi bi-github"></i>
                         </a>
@@ -85,50 +85,14 @@
                     </div>
                 </div>
 
-                <!-- DEVELOPER HUD COLUMN -->
-                <div class="col-lg-6 mt-4 mt-lg-0 animate-on-scroll">
-                    <div class="about-hud-card">
-                        <!-- Top HUD section (Profile & Meta info) -->
-                        <div class="about-hud-top">
-                            <div class="about-hud-image-wrap">
-                                <div class="hud-image-frame">
-                                    <img src="{{ asset('img/foto_about_me.jpeg') }}" alt="Profile Zenifen Agusti">
-                                </div>
-                            </div>
-                            <div class="about-hud-meta">
-                                <h3 class="hud-meta-name">Zenifen Agusti</h3>
-                                <p class="hud-meta-role">Web Developer & Front End Enthusiast</p>
-                            </div>
+                <!-- PROFILE PHOTO COLUMN (Opening Scroll Animation) -->
+                <div class="col-lg-5 offset-lg-1 col-xl-4 offset-xl-1 mt-4 mt-lg-0 animate-on-scroll d-flex justify-content-center">
+                    <div class="about-clean-photo-card text-center">
+                        <div class="about-clean-image-wrap mb-3">
+                            <img src="{{ asset('img/foto_about_me.jpeg') }}" alt="Zenifen Agusti" class="about-clean-img">
                         </div>
-
-                        <!-- Goals/Aspirations HUD section -->
-                        <div class="hud-goals-wrap">
-                            <span class="hud-goals-label" data-i18n="about.vision.label">Visi & Dedikasi</span>
-                            <p class="hud-goals-text" data-i18n="about.vision.text">
-                                Beraspirasi membangun <strong>solusi digital yang bermanfaat</strong> untuk berbagai kebutuhan industri, serta berkontribusi aktif dalam memajukan ekosistem teknologi web masa depan.
-                            </p>
-                        </div>
-
-                        <!-- Bottom HUD section (Grid stats) -->
-                        <div class="about-hud-stats-grid">
-                            <!-- Stat 1 -->
-                            <div class="hud-stat-item">
-                                <span class="hud-stat-number" data-i18n="about.stat1.number">5+</span>
-                                <span class="hud-stat-label" data-i18n="about.stat1.label">Projek Nyata</span>
-                            </div>
-                            
-                            <!-- Stat 2 -->
-                            <div class="hud-stat-item">
-                                <span class="hud-stat-number" data-i18n="about.stat2.number">100+</span>
-                                <span class="hud-stat-label" data-i18n="about.stat2.label">Kode Commit</span>
-                            </div>
-                            
-                            <!-- Stat 3 -->
-                            <div class="hud-stat-item">
-                                <span class="hud-stat-number" data-i18n="about.stat3.number">10+</span>
-                                <span class="hud-stat-label" data-i18n="about.stat3.label">Teknologi</span>
-                            </div>
-                        </div>
+                        <h3 class="about-clean-name">Zenifen Agusti</h3>
+                        <p class="about-clean-role mb-0" data-i18n="hero.role">Web Developer &amp; Front End Enthusiast</p>
                     </div>
                 </div>
             </div>
@@ -338,7 +302,7 @@
                 <p class="contact-subtitle-classic mb-4 mb-md-5" data-i18n="contact.subtitle">Mari bekerjasama untuk solusi digitalmu.</p>
 
                 <!-- Clean Contact Buttons Grid/Row -->
-                <div class="d-flex flex-wrap justify-content-center gap-3 mb-4 mb-md-5">
+                <div class="d-flex flex-wrap justify-content-center gap-3 mb-0">
                     <!-- Email Method -->
                     <a href="mailto:zenifenagusti70@gmail.com" class="contact-btn-classic">
                         <i class="bi bi-envelope-fill me-2 text-emerald"></i>
@@ -356,22 +320,6 @@
                         <i class="bi bi-geo-alt-fill me-2 text-emerald"></i>
                         <span>Yogyakarta, Indonesia</span>
                     </span>
-                </div>
-
-                <!-- Divider -->
-                <div class="contact-divider-classic mx-auto mb-4 mb-md-5"></div>
-
-                <!-- Social Links Row -->
-                <div class="d-flex justify-content-center gap-4">
-                    <a href="https://www.github.com/Zenn-Web" target="_blank" rel="noopener" class="social-link-rounded github" aria-label="GitHub">
-                        <i class="bi bi-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/zen-agusti-2928ba38a" target="_blank" rel="noopener" class="social-link-rounded linkedin" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a href="https://www.instagram.com/zenagust_" target="_blank" rel="noopener" class="social-link-rounded instagram" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
                 </div>
             </div>
         </div>

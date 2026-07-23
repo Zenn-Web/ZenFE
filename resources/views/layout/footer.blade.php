@@ -1,53 +1,50 @@
-<footer class="footer-section pt-5 pb-4 mt-5">
-    <div class="container">
-        <div class="row g-4 mb-5">
-            <!-- Column 1: Brand & Tagline -->
-            <div class="col-lg-5 col-md-6 col-sm-12 text-center text-md-start mb-5 mb-md-0">
-                <a class="footer-brand mb-3 d-inline-block" href="#home">
-                    Zenifen<span class="dot">.</span>
-                </a>
-                <p class="footer-tagline mb-4 mx-auto mx-md-0" data-i18n="footer.tagline">
-                    "Ini bukan tentang kamu tidak bisa melakukannya. Ini tentang kamu tidak melakukannya" - Zen
-                </p>
-                <div class="footer-socials d-flex gap-3 mt-4 justify-content-center justify-content-md-start">
-                    <a href="https://www.github.com/Zenn-Web" target="_blank" rel="noopener noreferrer" class="social-link-rounded github" aria-label="GitHub">
-                        <i class="bi bi-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/zen-agusti-2928ba38a" target="_blank" rel="noopener noreferrer" class="social-link-rounded linkedin" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a href="mailto:zenifenagusti70@gmail.com" class="social-link-rounded email" aria-label="Email">
-                        <i class="bi bi-envelope"></i>
-                    </a>
-                    <a href="https://wa.me/6285174344683" target="_blank" rel="noopener noreferrer" class="social-link-rounded whatsapp" aria-label="WhatsApp">
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
+<footer class="footer-section">
+    <div class="container-fluid px-4 px-md-5">
+        
+        <!-- Center Stack: Brand Logo -> Inline Navigation Menu -> Social Icons -->
+        <div class="d-flex flex-column align-items-center justify-content-center text-center">
+            
+            <!-- 1. Brand Logo -->
+            <a class="footer-brand mb-3 d-inline-block" href="/#home">
+                Zenifen<span class="dot">.</span>
+            </a>
 
-            <!-- Column 2: Navigation Links -->
-            <div class="col-lg-3 col-md-6 col-sm-12 text-center text-md-start mb-5 mb-md-0">
-                <h6 class="footer-heading mb-4" data-i18n="footer.navigation">NAVIGASI</h6>
-                <ul class="footer-nav-links list-unstyled mb-0 d-flex flex-column gap-3 align-items-center align-items-md-start">
-                    <li><a href="#home" data-i18n="footer.home">Beranda</a></li>
-                    <li><a href="#about" data-i18n="footer.about">Tentang</a></li>
-                    <li><a href="#resources" data-i18n="footer.projects">Proyek</a></li>
-                    <li><a href="#skills" data-i18n="footer.skills">Keahlian</a></li>
-                    <li><a href="#contact" data-i18n="footer.contact">Kontak</a></li>
-                </ul>
+            <!-- 2. Centered Horizontal Navigation Menu -->
+            <ul class="footer-nav-inline list-unstyled d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-3">
+                <li><a href="/#home" data-i18n="footer.home">BERANDA</a></li>
+                <li><a href="/#about" data-i18n="footer.about">TENTANG</a></li>
+                <li><a href="/#skills" data-i18n="footer.skills">KEAHLIAN</a></li>
+                <li><a href="/#resources" data-i18n="footer.projects">PROYEK</a></li>
+                <li><a href="/#contact" data-i18n="footer.contact">KONTAK</a></li>
+            </ul>
+
+            <!-- 3. Social Media Icons -->
+            <div class="footer-socials d-flex gap-3 justify-content-center mb-4">
+                <a href="https://www.github.com/Zenn-Web" target="_blank" rel="noopener noreferrer" class="social-link-rounded github" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/zen-agusti-2928ba38a" target="_blank" rel="noopener noreferrer" class="social-link-rounded linkedin" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="mailto:zenifenagusti70@gmail.com" class="social-link-rounded email" aria-label="Email">
+                    <i class="bi bi-envelope"></i>
+                </a>
+                <a href="https://wa.me/6285174344683" target="_blank" rel="noopener noreferrer" class="social-link-rounded whatsapp" aria-label="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
             </div>
 
         </div>
 
-        <hr class="footer-divider mb-4">
+        <hr class="footer-divider mb-3">
 
-        <!-- Copyright Row -->
-        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+        <!-- Copyright Row (Full width corner-to-corner) -->
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
             <p class="footer-copyright mb-0">
                 &copy; {{ date('Y') }} Zenifen. <span data-i18n="footer.rights">Seluruh hak dilindungi.</span>
             </p>
             <p class="footer-handcrafted mb-0">
-                Made by Zen 
+                Made by Zen
             </p>
         </div>
     </div>

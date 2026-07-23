@@ -8,17 +8,17 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BHLyoifd.css",
+    "file": "assets/app-D3q9ntOP.css",
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BmFtVJP1.js",
+    "file": "assets/app-DRG1sV_A.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/js/detail-animations.js": {
-    "file": "assets/detail-animations-DM1Qh--W.js",
+    "file": "assets/detail-animations-BYreR6hT.js",
     "name": "detail-animations",
     "src": "resources/js/detail-animations.js",
     "isEntry": true
@@ -30,7 +30,7 @@
     "isEntry": true
   },
   "resources/sass/Detailproject.scss": {
-    "file": "assets/Detailproject-oi4pADuJ.css",
+    "file": "assets/Detailproject-453SLK7s.css",
     "src": "resources/sass/Detailproject.scss",
     "isEntry": true,
     "name": "Detailproject",
@@ -48,7 +48,7 @@
     ]
   },
   "resources/sass/app2.scss": {
-    "file": "assets/app2-Ez5eGxvP.css",
+    "file": "assets/app2-gdljHRY7.css",
     "src": "resources/sass/app2.scss",
     "isEntry": true,
     "name": "app2",
