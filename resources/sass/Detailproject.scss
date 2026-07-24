@@ -199,10 +199,11 @@ html, body {
     border-radius: 16px;
     overflow: hidden;
     background: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
+    border: none;
     box-shadow: 
-        0 4px 20px rgba(0, 0, 0, 0.05),
-        0 12px 40px rgba(0, 0, 0, 0.06);
+        0 10px 30px rgba(0, 0, 0, 0.15),
+        0 20px 50px rgba(0, 0, 0, 0.1);
+    transition: none;
 }
 
 .dp-showcase-img {
@@ -211,11 +212,6 @@ html, body {
     object-fit: cover;
     object-position: center top;
     display: block;
-    transition: transform 0.8s var(--dp-ease);
-}
-
-.dp-showcase-frame:hover .dp-showcase-img {
-    transform: scale(1.02);
 }
 
 /* ─── Narrative / Process ─── */

@@ -67,15 +67,16 @@
     }
 }
 
-/* CLEAN MINIMALIST PHOTO CARD (Static) */
+/* CLEAN MINIMALIST PHOTO CARD (Static, No Border, Clean Shadow) */
 .about-clean-photo-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-primary);
+    border: none;
     border-radius: 20px;
     padding: 1.5rem;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
     max-width: 320px;
     width: 100%;
+    transition: none;
 }
 
 .about-clean-image-wrap {

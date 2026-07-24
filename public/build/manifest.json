@@ -8,7 +8,7 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-D3q9ntOP.css",
+    "file": "assets/app-BNcONwjy.css",
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
@@ -30,7 +30,7 @@
     "isEntry": true
   },
   "resources/sass/Detailproject.scss": {
-    "file": "assets/Detailproject-453SLK7s.css",
+    "file": "assets/Detailproject-zPZyPdm1.css",
     "src": "resources/sass/Detailproject.scss",
     "isEntry": true,
     "name": "Detailproject",
@@ -48,7 +48,7 @@
     ]
   },
   "resources/sass/app2.scss": {
-    "file": "assets/app2-gdljHRY7.css",
+    "file": "assets/app2-Dq54W4jT.css",
     "src": "resources/sass/app2.scss",
     "isEntry": true,
     "name": "app2",
