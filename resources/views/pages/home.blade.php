@@ -7,7 +7,7 @@
     <section id="home" class="hero-classic-section hero-bg-section position-relative overflow-hidden">
         <!-- Full Background Image -->
         <div class="hero-bg-image-wrapper">
-            <img src="{{ asset('img/hero-classical-muse.png') }}" alt="" class="hero-bg-image" aria-hidden="true">
+            <img src="{{ asset('img/hero-classical-muse.png') }}" alt="" class="hero-bg-image" aria-hidden="true" width="1920" height="1080" style="aspect-ratio: 16/9;">
             <!-- Dark Overlay for readability -->
             <div class="hero-bg-overlay"></div>
         </div>
@@ -94,7 +94,7 @@
                 <div class="col-lg-5 offset-lg-1 col-xl-4 offset-xl-1 mt-4 mt-lg-0 animate-on-scroll d-none d-lg-flex justify-content-center">
                     <div class="about-clean-photo-card text-center">
                         <div class="about-clean-image-wrap mb-3">
-                            <img src="{{ asset('img/foto_about_me.jpeg') }}" alt="Zenifen Agusti" class="about-clean-img">
+                            <img src="{{ asset('img/foto_about_me.jpeg') }}" alt="Zenifen Agusti" class="about-clean-img" width="400" height="500" style="aspect-ratio: 4/5;">
                         </div>
                         <h3 class="about-clean-name">Zenifen Agusti</h3>
                         <p class="about-clean-role mb-0"

@@ -7,6 +7,7 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/alpine-init.js',
                 'resources/sass/app.scss',
                 'resources/sass/detail-project.scss',
                 'resources/js/detail-animations.js'
