@@ -53,7 +53,26 @@
                     </button>
 
                     <!-- Theme Toggle Button -->
-                    <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Theme">
+                    <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Theme"
+                        x-data="{
+                            theme: localStorage.getItem('theme') || 'light',
+                            toggle() {
+                                if (!document.getElementById('theme-force-style')) {
+                                    const style = document.createElement('style');
+                                    style.id = 'theme-force-style';
+                                    style.textContent = 'html.theme-switching, html.theme-switching *, html.theme-switching *::before, html.theme-switching *::after { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease !important; transition-delay: 0s !important; animation: none !important; animation-delay: 0s !important; }';
+                                    document.head.appendChild(style);
+                                }
+                                document.documentElement.classList.add('theme-switching');
+                                document.documentElement.offsetHeight;
+                                this.theme = this.theme === 'light' ? 'dark' : 'light';
+                                document.documentElement.setAttribute('data-theme', this.theme);
+                                localStorage.setItem('theme', this.theme);
+                                setTimeout(() => document.documentElement.classList.remove('theme-switching'), 300);
+                            }
+                        }"
+                        x-init="document.documentElement.setAttribute('data-theme', theme)"
+                        @click="toggle()">
                         <i class="bi bi-sun-fill sun-icon"></i>
                         <i class="bi bi-moon-fill moon-icon"></i>
                     </button>
