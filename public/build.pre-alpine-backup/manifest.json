@@ -11,14 +11,8 @@
     "file": "assets/app-tn0RQdqM.css",
     "src": "resources/css/app.css"
   },
-  "resources/js/alpine-init.js": {
-    "file": "assets/alpine-init-DfxzSM81.js",
-    "name": "alpine-init",
-    "src": "resources/js/alpine-init.js",
-    "isEntry": true
-  },
   "resources/js/app.js": {
-    "file": "assets/app-eWWXK7Ri.js",
+    "file": "assets/app-C-5lausK.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
