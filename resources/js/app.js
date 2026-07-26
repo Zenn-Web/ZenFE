@@ -241,22 +241,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     }
 
-    // 7. AUTO-EXPAND TEXTAREA (Pesan)
-    const textareas = document.querySelectorAll('textarea');
-    textareas.forEach(textarea => {
-        // Atur tinggi awal jika ada isi (misal saat edit/error)
-        if(textarea.value) {
-            textarea.style.height = 'auto';
-            textarea.style.height = (textarea.scrollHeight) + 'px';
-        }
-
-        textarea.addEventListener('input', function() {
-            // Reset height sementara untuk mendapatkan scrollHeight yang sebenarnya
-            this.style.height = 'auto';
-            // Setel tinggi sesuai dengan konten di dalamnya
-            this.style.height = (this.scrollHeight) + 'px';
-        });
-    });
-
-
 });
