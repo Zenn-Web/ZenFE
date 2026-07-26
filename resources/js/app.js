@@ -1,3 +1,13 @@
+/**
+ * app.js — Vanilla JS core (non-Alpine)
+ * Sengaja tidak dimigrasikan ke Alpine:
+ * - Lenis smooth scroll (library eksternal)
+ * - Navbar height updater (util kecil, tanpa state UI)
+ * - Anchor-scroll (terikat erat ke Lenis)
+ * - Live clock (opsional, bisa dimigrasikan di masa depan)
+ * - IntersectionObserver scroll-reveal (risiko re-timing animasi)
+ * - Bootstrap navbar collapse listener (sudah stabil, ganti = risiko regresi)
+ */
 import './bootstrap';
 import Lenis from 'lenis';
 
