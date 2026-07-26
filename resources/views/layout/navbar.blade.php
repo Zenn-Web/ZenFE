@@ -48,7 +48,7 @@
             <div class="nav-actions d-flex align-items-center gap-3 gap-lg-4">
                 <div class="utility-toggles d-flex gap-2">
                     <!-- Language Toggle Button -->
-                    <button id="lang-toggle" class="btn-lang-toggle" aria-label="Switch Language">
+                    <button id="lang-toggle" @click="$store.lang.toggle()" class="btn-lang-toggle" aria-label="Switch Language">
                         <span class="lang-label">{{ app()->getLocale() === 'en' ? 'ID' : 'EN' }}</span>
                     </button>
 

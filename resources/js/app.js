@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         touchMultiplier: 2,
         infinite: false,
     });
+    window.lenis = lenis;
 
     // Dynamic navbar height calculation for perfect scroll offset
     const updateNavbarHeight = () => {
@@ -247,48 +248,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 8. HYBRID NO-RELOAD I18N TOGGLE ENGINE
-    let currentLang = document.documentElement.getAttribute('lang') || 'id';
-
-    function applyLanguage(lang) {
-        document.querySelectorAll('[data-i18n-id]').forEach(el => {
-            const attr = lang === 'en' ? 'data-i18n-en' : 'data-i18n-id';
-            const val = el.getAttribute(attr);
-            if (val !== null) {
-                el.innerHTML = val;
-            }
-        });
-        document.documentElement.setAttribute('lang', lang);
-        
-        const langToggle = document.getElementById('lang-toggle');
-        const langLabel = langToggle ? langToggle.querySelector('.lang-label') : null;
-        if (langLabel) {
-            langLabel.textContent = lang === 'en' ? 'ID' : 'EN';
-        }
-
-        if (lenis && typeof lenis.resize === 'function') {
-            lenis.resize();
-        }
-    }
-
-    const langToggle = document.getElementById('lang-toggle');
-    if (langToggle) {
-        langToggle.addEventListener('click', () => {
-            const newLang = currentLang === 'id' ? 'en' : 'id';
-            applyLanguage(newLang);
-            currentLang = newLang;
-
-            const csrfMeta = document.querySelector('meta[name="csrf-token"]');
-            const token = csrfMeta ? csrfMeta.content : '';
-
-            fetch(`/lang/${newLang}`, {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': token,
-                    'Accept': 'application/json'
-                }
-            }).catch(() => {});
-        });
-    }
 
 });
