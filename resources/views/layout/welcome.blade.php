@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Zenifen Agusti</title>
 
     <!-- Favicon -->
@@ -16,7 +17,7 @@
     <!-- Lottie Player -->
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     
-    @vite(['resources/sass/app.scss', 'resources/sass/app2.scss', 'resources/sass/Detailproject.scss', 'resources/js/app.js', 'resources/js/projectranslate.js'])
+    @vite(['resources/sass/app.scss', 'resources/sass/app2.scss', 'resources/sass/Detailproject.scss', 'resources/js/app.js'])
 
     @stack('styles')
 

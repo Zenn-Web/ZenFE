@@ -21,7 +21,7 @@ class ContactController extends Controller
             "Email: {$validated['email']}\n\n" .
             "Pesan:\n{$validated['message']}",
             function ($mail) use ($validated) {
-                $mail->to('zenifenagusti70@gmail.com')
+                $mail->to(config('mail.contact_recipient'))
                      ->subject('Pesan Baru dari ' . $validated['first_name'] . ' ' . $validated['last_name'])
                      ->replyTo($validated['email']);
             }

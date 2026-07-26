@@ -20,7 +20,9 @@
                 <div class="col-lg-8 col-xl-7 text-center">
                     <!-- Eyebrow Badge Pill -->
                     <div class="hero-classic-badge-wrapper animate-on-scroll">
-                        <span class="hero-classic-badge-pill hero-badge-light" data-i18n="hero.role">Web Developer &amp; Front End Enthusiast</span>
+                        <span class="hero-classic-badge-pill hero-badge-light"
+                              data-i18n-id="{{ __('portfolio.hero_role', [], 'id') }}"
+                              data-i18n-en="{{ __('portfolio.hero_role', [], 'en') }}">{!! __('portfolio.hero_role') !!}</span>
                     </div>
 
                     <!-- Name / Main Heading -->
@@ -29,14 +31,20 @@
                     </h1>
 
                     <!-- Sub Heading / Paragraph -->
-                    <p class="hero-classic-bio hero-bio-light animate-on-scroll mx-auto" data-i18n="hero.extra">
-                        Saya membuat website yang menggabungkan desain modern, performa tinggi, dan pengalaman pengguna yang berkesan
+                    <p class="hero-classic-bio hero-bio-light animate-on-scroll mx-auto"
+                       data-i18n-id="{{ __('portfolio.hero_extra', [], 'id') }}"
+                       data-i18n-en="{{ __('portfolio.hero_extra', [], 'en') }}">
+                        {{ __('portfolio.hero_extra') }}
                     </p>
 
                     <!-- CTA Buttons -->
                     <div class="hero-classic-cta hero-cta-center animate-buttons">
-                        <a href="#resources" class="btn-classic-solid btn-solid-light" data-i18n="hero.btn.projects">Lihat Karya Saya</a>
-                        <a href="#contact" class="btn-classic-outline btn-outline-light" data-i18n="hero.btn.contact">Mari Ngobrol</a>
+                        <a href="#resources" class="btn-classic-solid btn-solid-light"
+                           data-i18n-id="{{ __('portfolio.hero_btn_projects', [], 'id') }}"
+                           data-i18n-en="{{ __('portfolio.hero_btn_projects', [], 'en') }}">{{ __('portfolio.hero_btn_projects') }}</a>
+                        <a href="#contact" class="btn-classic-outline btn-outline-light"
+                           data-i18n-id="{{ __('portfolio.hero_btn_contact', [], 'id') }}"
+                           data-i18n-en="{{ __('portfolio.hero_btn_contact', [], 'en') }}">{{ __('portfolio.hero_btn_contact') }}</a>
                     </div>
 
 
@@ -50,15 +58,23 @@
             <div class="row align-items-center justify-content-center g-4 g-lg-5 mx-auto" style="max-width: 1050px;">
                 <!-- BIO COLUMN -->
                 <div class="col-lg-6 about-bio-col animate-on-scroll">
-                    <span class="about-eyebrow" data-i18n="about.title">Tentang Saya</span>
-                    <h2 class="about-title animate-text text-reveal" data-i18n="about.title">Tentang Saya</h2>
+                    <span class="about-eyebrow"
+                          data-i18n-id="{{ __('portfolio.about_title', [], 'id') }}"
+                          data-i18n-en="{{ __('portfolio.about_title', [], 'en') }}">{{ __('portfolio.about_title') }}</span>
+                    <h2 class="about-title animate-text text-reveal"
+                        data-i18n-id="{{ __('portfolio.about_title', [], 'id') }}"
+                        data-i18n-en="{{ __('portfolio.about_title', [], 'en') }}">{{ __('portfolio.about_title') }}</h2>
                     <div class="about-divider animate-text"></div>
                     
-                    <p class="about-desc animate-text mb-4" data-i18n="about.p1">
-                        Hai! Saya Zenifen, seorang <strong>Front-End Developer</strong> yang fokus membangun antarmuka web interaktif. Berawal dari rasa penasaran dengan HTML, kini saya merancang arsitektur web modern menggunakan <strong>React, JavaScript modern, dan Tailwind CSS</strong>.
+                    <p class="about-desc animate-text mb-4"
+                       data-i18n-id="{{ __('portfolio.about_p1', [], 'id') }}"
+                       data-i18n-en="{{ __('portfolio.about_p1', [], 'en') }}">
+                        {!! __('portfolio.about_p1') !!}
                     </p>
-                    <p class="about-desc animate-text text-secondary mb-4" data-i18n="about.p2">
-                        Bagi saya, <i>coding</i> bukan hanya soal sintaks, tapi tentang memecahkan masalah. Mulai dari <strong>optimasi performa</strong> (Core Web Vitals) hingga implementasi <strong>Design System</strong>, saya memastikan setiap baris kode memberi dampak nyata pada kenyamanan pengguna.
+                    <p class="about-desc animate-text text-secondary mb-4"
+                       data-i18n-id="{{ __('portfolio.about_p2', [], 'id') }}"
+                       data-i18n-en="{{ __('portfolio.about_p2', [], 'en') }}">
+                        {!! __('portfolio.about_p2') !!}
                     </p>
                     
                     <div class="animate-buttons">
@@ -81,7 +97,9 @@
                             <img src="{{ asset('img/foto_about_me.jpeg') }}" alt="Zenifen Agusti" class="about-clean-img">
                         </div>
                         <h3 class="about-clean-name">Zenifen Agusti</h3>
-                        <p class="about-clean-role mb-0" data-i18n="hero.role">Web Developer &amp; Front End Enthusiast</p>
+                        <p class="about-clean-role mb-0"
+                           data-i18n-id="{{ __('portfolio.hero_role', [], 'id') }}"
+                           data-i18n-en="{{ __('portfolio.hero_role', [], 'en') }}">{!! __('portfolio.hero_role') !!}</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +110,9 @@
         <div class="container" style="max-width: 800px;">
 
             <div class="mb-5 text-center">
-                <h2 class="fw-bold mb-0 animate-on-scroll text-reveal d-inline-block" data-i18n="skills.title">Keahlian Saya</h2>
+                <h2 class="fw-bold mb-0 animate-on-scroll text-reveal d-inline-block"
+                    data-i18n-id="{{ __('portfolio.skills_title', [], 'id') }}"
+                    data-i18n-en="{{ __('portfolio.skills_title', [], 'en') }}">{{ __('portfolio.skills_title') }}</h2>
                 <div class="mx-auto mt-2 animate-on-scroll" style="width: 50px; height: 3px; background: var(--accent-emerald);"></div>
             </div>
 
@@ -103,8 +123,10 @@
                 <div class="skills-clean-block">
                     <span class="skills-clean-label">FRONT-END</span>
                     <p class="skills-clean-text mb-2">HTML, CSS, JavaScript, React, Tailwind CSS, Bootstrap</p>
-                    <p class="skills-clean-desc text-secondary mb-0" style="font-size: 0.88rem; line-height: 1.6;">
-                        Fokus pada pembuatan antarmuka pengguna yang responsif, modern, dan mengedepankan pengalaman pengguna terbaik.
+                    <p class="skills-clean-desc text-secondary mb-0" style="font-size: 0.88rem; line-height: 1.6;"
+                       data-i18n-id="{{ __('portfolio.skills_frontend_desc', [], 'id') }}"
+                       data-i18n-en="{{ __('portfolio.skills_frontend_desc', [], 'en') }}">
+                        {{ __('portfolio.skills_frontend_desc') }}
                     </p>
                 </div>
 
@@ -112,8 +134,10 @@
                 <div class="skills-clean-block">
                     <span class="skills-clean-label">BACK-END &amp; DATABASE</span>
                     <p class="skills-clean-text mb-2">Laravel, PHP, Java, MySQL, PostgreSQL, Go</p>
-                    <p class="skills-clean-desc text-secondary mb-0" style="font-size: 0.88rem; line-height: 1.6;">
-                        Merancang arsitektur server yang kokoh, manajemen database yang efisien, serta pengembangan API yang aman.
+                    <p class="skills-clean-desc text-secondary mb-0" style="font-size: 0.88rem; line-height: 1.6;"
+                       data-i18n-id="{{ __('portfolio.skills_backend_desc', [], 'id') }}"
+                       data-i18n-en="{{ __('portfolio.skills_backend_desc', [], 'en') }}">
+                        {{ __('portfolio.skills_backend_desc') }}
                     </p>
                 </div>
 
@@ -121,8 +145,10 @@
                 <div class="skills-clean-block">
                     <span class="skills-clean-label">TOOLS &amp; WORKFLOW</span>
                     <p class="skills-clean-text mb-2">Git, GitHub, Postman, Vite, VS Code, IntelliJ IDEA, Laragon, Canva</p>
-                    <p class="skills-clean-desc text-secondary mb-0" style="font-size: 0.88rem; line-height: 1.6;">
-                        Menggunakan ekosistem alat pengembangan modern untuk meningkatkan efisiensi kerja dan kolaborasi tim.
+                    <p class="skills-clean-desc text-secondary mb-0" style="font-size: 0.88rem; line-height: 1.6;"
+                       data-i18n-id="{{ __('portfolio.skills_tools_desc', [], 'id') }}"
+                       data-i18n-en="{{ __('portfolio.skills_tools_desc', [], 'en') }}">
+                        {{ __('portfolio.skills_tools_desc') }}
                     </p>
                 </div>
 
@@ -136,15 +162,19 @@
         <div class="container" style="max-width: 800px;">
 
             <div class="mb-5 text-center">
-                <h2 class="fw-bold mb-0 animate-on-scroll text-reveal d-inline-block" data-i18n="projects.title">Projek Saya</h2>
+                <h2 class="fw-bold mb-0 animate-on-scroll text-reveal d-inline-block"
+                    data-i18n-id="{{ __('portfolio.projects_title', [], 'id') }}"
+                    data-i18n-en="{{ __('portfolio.projects_title', [], 'en') }}">{{ __('portfolio.projects_title') }}</h2>
                 <div class="mx-auto mt-2 animate-on-scroll" style="width: 50px; height: 3px; background: var(--accent-emerald);"></div>
             </div>
 
             <div class="d-flex flex-column gap-5 text-start">
                 @forelse($projects as $project)
                     @php
-                        $cleanTitle = str_replace([chr(150), chr(151)], ['&#8211;', '&#8211;'], $project->title ?? '');
-                        $cleanCategory = str_replace(chr(149), '&#8226;', $project->category ?? '');
+                        $cleanTitleId = str_replace([chr(150), chr(151)], ['&#8211;', '&#8211;'], $project->title ?? '');
+                        $cleanTitleEn = str_replace([chr(150), chr(151)], ['&#8211;', '&#8211;'], $project->title_en ?? $project->title ?? '');
+                        $cleanCategoryId = str_replace(chr(149), '&#8226;', $project->category ?? '');
+                        $cleanCategoryEn = str_replace(chr(149), '&#8226;', $project->category_en ?? $project->category ?? '');
                     @endphp
                     <div class="project-centered-item animate-on-scroll w-100 pb-4 {{ !$loop->last ? 'border-bottom border-secondary border-opacity-10' : '' }}">
                         <!-- Developer Role & Project Domain Lines -->
@@ -153,20 +183,24 @@
                                 FrontEnd &bull; UI/UX &bull; Contributor GIT
                             </div>
                             <div class="project-meta-line d-flex flex-wrap align-items-center gap-2">
-                                <span data-i18n="project.category.{{ $project->slug }}">{!! $cleanCategory !!}</span>
+                                <span data-i18n-id="{!! $cleanCategoryId !!}" data-i18n-en="{!! $cleanCategoryEn !!}">{!! app()->getLocale() === 'en' ? $cleanCategoryEn : $cleanCategoryId !!}</span>
                                 <span>&bull;</span>
                                 <span>{{ $project->year }}</span>
                             </div>
                         </div>
 
                         <!-- Title -->
-                        <h3 class="project-split-title fw-bold mb-3" data-i18n="project.title.{{ $project->slug }}">
-                            {!! $cleanTitle !!}
+                        <h3 class="project-split-title fw-bold mb-3"
+                            data-i18n-id="{!! $cleanTitleId !!}"
+                            data-i18n-en="{!! $cleanTitleEn !!}">
+                            {!! app()->getLocale() === 'en' ? $cleanTitleEn : $cleanTitleId !!}
                         </h3>
 
                         <!-- Description -->
-                        <p class="text-secondary mb-3" style="line-height: 1.7;" data-i18n="project.description.{{ $project->slug }}">
-                            {{ $project->description }}
+                        <p class="text-secondary mb-3" style="line-height: 1.7;"
+                           data-i18n-id="{{ $project->description }}"
+                           data-i18n-en="{{ $project->description_en ?? $project->description }}">
+                            {{ app()->getLocale() === 'en' ? ($project->description_en ?? $project->description) : $project->description }}
                         </p>
 
                         <!-- Tech Stack Pills -->
@@ -182,8 +216,10 @@
 
                         <!-- CTA Links -->
                         <div class="d-flex flex-wrap gap-3 align-items-center">
-                            <a href="{{ route('project.show', $project->slug) }}" class="btn-project-link-primary" data-i18n="projects.detail">
-                                Detail Projek <i class="bi bi-arrow-right ms-1"></i>
+                            <a href="{{ route('project.show', $project->slug) }}" class="btn-project-link-primary"
+                               data-i18n-id="{{ __('portfolio.projects_detail', [], 'id') }} <i class='bi bi-arrow-right ms-1'></i>"
+                               data-i18n-en="{{ __('portfolio.projects_detail', [], 'en') }} <i class='bi bi-arrow-right ms-1'></i>">
+                                {{ __('portfolio.projects_detail') }} <i class="bi bi-arrow-right ms-1"></i>
                             </a>
                             @if($project->live_demo_url)
                             <a href="{{ $project->live_demo_url }}" target="_blank" rel="noopener" class="btn-project-link-secondary">
@@ -194,7 +230,9 @@
                     </div>
                 @empty
                     <div class="col-12 text-center py-5">
-                        <p class="text-muted" data-i18n="projects.empty">Belum ada project untuk ditampilkan.</p>
+                        <p class="text-muted"
+                           data-i18n-id="{{ __('portfolio.projects_empty', [], 'id') }}"
+                           data-i18n-en="{{ __('portfolio.projects_empty', [], 'en') }}">{{ __('portfolio.projects_empty') }}</p>
                     </div>
                 @endforelse
             </div>
@@ -204,13 +242,19 @@
         <div class="container d-flex justify-content-center px-4">
             <div class="contact-card-classic p-4 p-md-5 text-center animate-on-scroll">
                 <!-- Eyebrow -->
-                <p class="contact-eyebrow-classic mb-2" data-i18n="contact.eyebrow">Hubungi Saya</p>
+                <p class="contact-eyebrow-classic mb-2"
+                   data-i18n-id="{{ __('portfolio.contact_eyebrow', [], 'id') }}"
+                   data-i18n-en="{{ __('portfolio.contact_eyebrow', [], 'en') }}">{{ __('portfolio.contact_eyebrow') }}</p>
                 
                 <!-- Title -->
-                <h2 class="contact-title-classic mb-3 text-reveal" data-i18n="contact.title">Kontak Saya</h2>
+                <h2 class="contact-title-classic mb-3 text-reveal"
+                    data-i18n-id="{{ __('portfolio.contact_title', [], 'id') }}"
+                    data-i18n-en="{{ __('portfolio.contact_title', [], 'en') }}">{{ __('portfolio.contact_title') }}</h2>
                 
                 <!-- Subtitle -->
-                <p class="contact-subtitle-classic mb-4 mb-md-5" data-i18n="contact.subtitle">Mari bekerjasama untuk solusi digitalmu.</p>
+                <p class="contact-subtitle-classic mb-4 mb-md-5"
+                   data-i18n-id="{{ __('portfolio.contact_subtitle', [], 'id') }}"
+                   data-i18n-en="{{ __('portfolio.contact_subtitle', [], 'en') }}">{{ __('portfolio.contact_subtitle') }}</p>
 
                 <!-- Clean Contact Buttons Grid/Row -->
                 <div class="d-flex flex-wrap justify-content-center gap-3 mb-0">
@@ -237,5 +281,3 @@
     </section>
 
 @endsection
-
-

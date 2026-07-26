@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\LanguageController;
 
 // Route untuk halaman home
 Route::get('/', function () {
@@ -15,3 +16,6 @@ Route::get('/project/{project:slug}', [ProjectController::class, 'show'])->name(
 
 // Route untuk contact form
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+// Route untuk switch bahasa (background fetch)
+Route::post('/lang/{locale}', [LanguageController::class, 'switch'])->name('lang.switch');

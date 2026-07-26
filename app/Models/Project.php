@@ -8,14 +8,18 @@ class Project extends Model
 {
     protected $fillable = [
         'title',
+        'title_en',
         'slug',
         'description',
+        'description_en',
         'image',
         'category',
+        'category_en',
         'year',
         'github_url',
         'tech_stack',
         'flow_description',
+        'flow_description_en',
         'live_demo_url',
     ];
 
@@ -25,6 +29,42 @@ class Project extends Model
             'tech_stack' => 'array',
         ];
     }
+
+    // --- Locale-aware accessors ---
+
+    public function getTranslatedTitleAttribute(): string
+    {
+        if (app()->getLocale() === 'en' && $this->title_en) {
+            return $this->title_en;
+        }
+        return $this->title;
+    }
+
+    public function getTranslatedDescriptionAttribute(): string
+    {
+        if (app()->getLocale() === 'en' && $this->description_en) {
+            return $this->description_en;
+        }
+        return $this->description ?? '';
+    }
+
+    public function getTranslatedCategoryAttribute(): string
+    {
+        if (app()->getLocale() === 'en' && $this->category_en) {
+            return $this->category_en;
+        }
+        return $this->category ?? '';
+    }
+
+    public function getTranslatedFlowDescriptionAttribute(): string
+    {
+        if (app()->getLocale() === 'en' && $this->flow_description_en) {
+            return $this->flow_description_en;
+        }
+        return $this->flow_description ?? '';
+    }
+
+    // --- Existing accessor ---
 
     public function getTechStackBadgesAttribute(): array
     {

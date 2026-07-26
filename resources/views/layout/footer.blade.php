@@ -11,11 +11,11 @@
 
             <!-- 2. Centered Horizontal Navigation Menu -->
             <ul class="footer-nav-inline list-unstyled d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-3">
-                <li><a href="/#home" data-i18n="footer.home">BERANDA</a></li>
-                <li><a href="/#about" data-i18n="footer.about">TENTANG</a></li>
-                <li><a href="/#skills" data-i18n="footer.skills">KEAHLIAN</a></li>
-                <li><a href="/#resources" data-i18n="footer.projects">PROYEK</a></li>
-                <li><a href="/#contact" data-i18n="footer.contact">KONTAK</a></li>
+                <li><a href="/#home" data-i18n-id="{{ __('portfolio.footer_home', [], 'id') }}" data-i18n-en="{{ __('portfolio.footer_home', [], 'en') }}">{{ __('portfolio.footer_home') }}</a></li>
+                <li><a href="/#about" data-i18n-id="{{ __('portfolio.footer_about', [], 'id') }}" data-i18n-en="{{ __('portfolio.footer_about', [], 'en') }}">{{ __('portfolio.footer_about') }}</a></li>
+                <li><a href="/#skills" data-i18n-id="{{ __('portfolio.footer_skills', [], 'id') }}" data-i18n-en="{{ __('portfolio.footer_skills', [], 'en') }}">{{ __('portfolio.footer_skills') }}</a></li>
+                <li><a href="/#resources" data-i18n-id="{{ __('portfolio.footer_projects', [], 'id') }}" data-i18n-en="{{ __('portfolio.footer_projects', [], 'en') }}">{{ __('portfolio.footer_projects') }}</a></li>
+                <li><a href="/#contact" data-i18n-id="{{ __('portfolio.footer_contact', [], 'id') }}" data-i18n-en="{{ __('portfolio.footer_contact', [], 'en') }}">{{ __('portfolio.footer_contact') }}</a></li>
             </ul>
 
             <!-- 3. Social Media Icons -->
@@ -41,7 +41,7 @@
         <!-- Copyright Row (Full width corner-to-corner) -->
         <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
             <p class="footer-copyright mb-0">
-                &copy; {{ date('Y') }} Zenifen. <span data-i18n="footer.rights">Seluruh hak dilindungi.</span>
+                &copy; {{ date('Y') }} Zenifen. <span data-i18n-id="{{ __('portfolio.footer_rights', [], 'id') }}" data-i18n-en="{{ __('portfolio.footer_rights', [], 'en') }}">{{ __('portfolio.footer_rights') }}</span>
             </p>
             <p class="footer-handcrafted mb-0">
                 Made by Zen

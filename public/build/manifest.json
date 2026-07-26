@@ -8,11 +8,11 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BNcONwjy.css",
+    "file": "assets/app-tn0RQdqM.css",
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DRG1sV_A.js",
+    "file": "assets/app-BeYZDVGv.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
@@ -21,12 +21,6 @@
     "file": "assets/detail-animations-BYreR6hT.js",
     "name": "detail-animations",
     "src": "resources/js/detail-animations.js",
-    "isEntry": true
-  },
-  "resources/js/projectranslate.js": {
-    "file": "assets/projectranslate-CwByEw6o.js",
-    "name": "projectranslate",
-    "src": "resources/js/projectranslate.js",
     "isEntry": true
   },
   "resources/sass/Detailproject.scss": {

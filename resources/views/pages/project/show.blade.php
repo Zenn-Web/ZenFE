@@ -3,9 +3,10 @@
 @section('content')
 
 @php
-    $cleanCategory = str_replace("\x95", '&#8226;', str_replace("\x96", '&#8211;', $project->category ?? ''));
-    $cleanTitle = str_replace(["\x95", "\x96"], ['&#8226;', '&#8211;'], $project->title ?? '');
-    $shortCategory = preg_replace('/[^A-Za-z0-9\/\+].*/', '', $project->category ?? '') ?: 'Project';
+    $cleanCategoryId = str_replace(["\x95", "\x96"], ['&#8226;', '&#8211;'], $project->category ?? '');
+    $cleanCategoryEn = str_replace(["\x95", "\x96"], ['&#8226;', '&#8211;'], $project->category_en ?? $project->category ?? '');
+    $cleanTitleId = str_replace(["\x95", "\x96"], ['&#8226;', '&#8211;'], $project->title ?? '');
+    $cleanTitleEn = str_replace(["\x95", "\x96"], ['&#8226;', '&#8211;'], $project->title_en ?? $project->title ?? '');
 @endphp
 
 <div class="dp-split-section">
@@ -21,7 +22,7 @@
                 <div class="dp-showcase-wrap" data-dp-anim="slide-right">
                     <div class="dp-showcase-frame">
                         <img src="{{ asset($project->image) }}"
-                             alt="{{ $cleanTitle }}"
+                             alt="{{ $cleanTitleId }}"
                              class="dp-showcase-img"
                              loading="lazy">
                     </div>
@@ -38,11 +39,15 @@
                         </div>
 
                         <div class="dp-narrative-header" data-dp-anim="fade-up">
-                            <span class="dp-eyebrow" data-i18n="project.flow">Alur Pengerjaan</span>
+                            <span class="dp-eyebrow"
+                                  data-i18n-id="{{ __('portfolio.project_flow', [], 'id') }}"
+                                  data-i18n-en="{{ __('portfolio.project_flow', [], 'en') }}">{{ __('portfolio.project_flow') }}</span>
                         </div>
 
-                        <div class="dp-narrative-text" data-dp-anim="fade-up" data-i18n="project.flow_description.{{ $project->slug }}">
-                            {!! nl2br(e($project->flow_description)) !!}
+                        <div class="dp-narrative-text" data-dp-anim="fade-up"
+                             data-i18n-id="{!! nl2br(e($project->flow_description)) !!}"
+                             data-i18n-en="{!! nl2br(e($project->flow_description_en ?? $project->flow_description)) !!}">
+                            {!! nl2br(e(app()->getLocale() === 'en' ? ($project->flow_description_en ?? $project->flow_description) : $project->flow_description)) !!}
                         </div>
                     </div>
                 </div>
@@ -60,18 +65,23 @@
                     <div class="dp-sidebar-element" data-dp-anim="fade-up">
                         <a href="{{ url('/#resources') }}" class="dp-back-btn">
                             <i class="bi bi-arrow-left me-2"></i>
-                            <span data-i18n="project.back">Kembali ke Portfolio</span>
+                            <span data-i18n-id="{{ __('portfolio.project_back', [], 'id') }}"
+                                  data-i18n-en="{{ __('portfolio.project_back', [], 'en') }}">{{ __('portfolio.project_back') }}</span>
                         </a>
                     </div>
 
                     {{-- Title --}}
                     <div class="dp-sidebar-element" data-dp-anim="fade-up">
-                        <h1 class="dp-project-title" data-i18n="project.title.{{ $project->slug }}">{!! $cleanTitle !!}</h1>
+                        <h1 class="dp-project-title"
+                            data-i18n-id="{!! $cleanTitleId !!}"
+                            data-i18n-en="{!! $cleanTitleEn !!}">{!! app()->getLocale() === 'en' ? $cleanTitleEn : $cleanTitleId !!}</h1>
                     </div>
 
                     {{-- Description --}}
                     <div class="dp-sidebar-element" data-dp-anim="fade-up">
-                        <p class="dp-project-desc" data-i18n="project.description.{{ $project->slug }}">{{ $project->description }}</p>
+                        <p class="dp-project-desc"
+                           data-i18n-id="{{ $project->description }}"
+                           data-i18n-en="{{ $project->description_en ?? $project->description }}">{{ app()->getLocale() === 'en' ? ($project->description_en ?? $project->description) : $project->description }}</p>
                     </div>
 
                     {{-- Tech Stack (Plain Text) --}}
@@ -87,7 +97,8 @@
                     <div class="dp-sidebar-element dp-cta-wrap" data-dp-anim="fade-up">
                         @if($project->live_demo_url)
                             <a href="{{ $project->live_demo_url }}" target="_blank" rel="noopener" class="dp-btn-cta dp-btn-cta--primary">
-                                <span data-i18n="project.live_demo">Live Demo</span>
+                                <span data-i18n-id="{{ __('portfolio.project_live_demo', [], 'id') }}"
+                                      data-i18n-en="{{ __('portfolio.project_live_demo', [], 'en') }}">{{ __('portfolio.project_live_demo') }}</span>
                                 <i class="bi bi-arrow-up-right"></i>
                             </a>
                         @endif
@@ -95,12 +106,14 @@
                         @if($project->github_url)
                             <a href="{{ $project->github_url }}" target="_blank" rel="noopener" class="dp-btn-cta dp-btn-cta--secondary">
                                 <i class="bi bi-github"></i>
-                                <span data-i18n="project.github">Lihat di GitHub</span>
+                                <span data-i18n-id="{{ __('portfolio.project_github', [], 'id') }}"
+                                      data-i18n-en="{{ __('portfolio.project_github', [], 'en') }}">{{ __('portfolio.project_github') }}</span>
                             </a>
                         @else
                             <div class="dp-btn-cta dp-btn-cta--locked" title="Repository ini bersifat privat untuk menjaga kerahasiaan data agensi/klien.">
                                 <i class="bi bi-lock-fill"></i>
-                                <span data-i18n="project.private_repo">Repositori Privat</span>
+                                <span data-i18n-id="{{ __('portfolio.project_private_repo', [], 'id') }}"
+                                      data-i18n-en="{{ __('portfolio.project_private_repo', [], 'en') }}">{{ __('portfolio.project_private_repo') }}</span>
                             </div>
                         @endif
                     </div>
