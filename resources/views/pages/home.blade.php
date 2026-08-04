@@ -144,7 +144,7 @@
                 <!-- Group 3: Tools & Workflow -->
                 <div class="skills-clean-block">
                     <span class="skills-clean-label">TOOLS &amp; WORKFLOW</span>
-                    <p class="skills-clean-text mb-2">Git, GitHub, Postman, Vite, VS Code, IntelliJ IDEA, Laragon, Canva</p>
+                    <p class="skills-clean-text mb-2">Git, GitHub, Bruno, Vite, VS Code, IntelliJ IDEA, Laragon, Canva</p>
                     <p class="skills-clean-desc text-secondary mb-0" style="font-size: 0.88rem; line-height: 1.6;"
                        data-i18n-id="{{ __('portfolio.skills_tools_desc', [], 'id') }}"
                        data-i18n-en="{{ __('portfolio.skills_tools_desc', [], 'en') }}">
